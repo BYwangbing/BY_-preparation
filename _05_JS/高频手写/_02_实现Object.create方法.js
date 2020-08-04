@@ -1,0 +1,3 @@
+function creat(proto) {
+
+}

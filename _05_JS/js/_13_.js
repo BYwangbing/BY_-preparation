@@ -1,0 +1,1 @@
+this === window ? console.log('browser') : console.log('node');

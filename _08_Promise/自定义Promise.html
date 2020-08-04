@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="./lib/promise.js"></script>
+<script>
+    const p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve(1);
+            reject(2)
+        }, 1000)
+    });
+    p.then(
+        value => {
+            console.log('First onResolved: ' + value);
+        },
+        reason => {
+            console.log('First onRejected: ' + reason);
+        }
+    );
+    p.then(
+        value => {
+            console.log('Second onResolved: ' + value);
+        },
+        reason => {
+            console.log('Second onRejected: ' + reason);
+        }
+    )
+</script>
+</body>
+</html>

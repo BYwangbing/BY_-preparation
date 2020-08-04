@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: coral;
+            border: 1px solid;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="myDiv">
+    <p id="myP">点击该段落， 我是冒泡</p>
+</div>
+<br>
+<div id="myDiv2">
+    <p id="myP2">点击该段落， 我是捕获</p>
+</div>
+<button id="myBtn">点我</button>
+<p id="demo"></p>
+<script>
+    // element.addEventListener(event, function, useCapture)
+    /*
+        useCapture:
+            true - 事件句柄在捕获阶段执行
+            false- false- 默认。事件句柄在冒泡阶段执行
+     */
+    document.getElementById('myBtn').addEventListener("click", myFunction);
+
+    function myFunction() {
+        document.getElementById("demo").innerHTML += "王福坤坤是个智障!<br>"
+    }
+
+    document.getElementById("myP").addEventListener("click", function () {
+        alert("你点击了 P 元素!");
+    }, false);
+    document.getElementById("myDiv").addEventListener("click", function () {
+        alert("你点击了 DIV 元素!");
+    }, false);
+    document.getElementById("myP2").addEventListener("click", function () {
+        alert("你点击了 P 元素!");
+    }, true);
+    document.getElementById("myDiv2").addEventListener("click", function () {
+        alert("你点击了 DIV 元素!");
+    }, true);
+
+    // 移动端click事件延迟300ms的原因以及解决办法
+    window.addEventListener('load', function () {
+        Fastclick.attach(document.body)
+    }, false)
+</script>
+</body>
+</html>

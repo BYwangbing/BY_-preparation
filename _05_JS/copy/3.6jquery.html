@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>尝试 jQuery 深拷贝</p>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script>
+    $(function () {
+        const obj1 = [1, 'Hello!', {name: 'jsliang1'}, [{name: 'LiangJunrong1',}]];
+        const obj2 = {};
+        /**
+         * @name jQuery深拷贝
+         * @description $.extend(deep, target, object1, object2...)
+         * @param {Boolean} deep 可选 true 或者 false，默认是 false，所以一般如果需要填写，最好是 true。
+         * @param {Object} target 需要存放的位置
+         * @param {Object} object 可以有 n 个原数据
+         */
+        $.extend(true, obj2, obj1);
+        obj2[0] = 2;
+        obj2[1] = 'Hi!';
+        obj2[2].name = 'jsliang2';
+        obj2[3][0].name = 'LiangJunrong2';
+
+        console.log(obj1);
+        console.log(obj2);
+
+    });
+</script>
+</body>
+</html>
