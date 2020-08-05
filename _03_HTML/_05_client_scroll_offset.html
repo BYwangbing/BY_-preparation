@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    强制让文档与设备的宽度保持1:1 -->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--    使用浏览器版本-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 在web app应用下状态条（屏幕顶部条）的颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- 针对WebApp全屏模式，隐藏状态栏/设置状态栏颜色，content的值为default | black | black-translucent -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 禁止了把数字转化为拨号链接 -->
+    <meta name="format-detection" content="telephone=no">
+    <title>client_scroll_offset</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 20px;
+            border: 10px solid gray;
+            padding: 10px;
+        }
+
+        #wrapper {
+            position: relative;
+        }
+
+        #div1,
+        #div2 {
+            height: 200px;
+            width: 200px;
+        }
+
+        #tip1,
+        #tip2 {
+            position: absolute;
+            margin: 0;
+            right: 100px;
+            height: 150px;
+        }
+
+        #tip1 {
+            top: 50px;
+        }
+
+        #tip2 {
+            top: 300px;
+        }
+
+        #div1 {
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<!--<div style="height: 10000px"></div>-->
+<!--<script src=""></script>-->
+<!--<img src="" alt="">-->
+<!--<a href=""></a>-->
+<!--<link rel="stylesheet" href="">-->
+<div id="wrapper">
+    <div id="div1">
+        <p style="height:300px;border: 2px solid red"></p>
+        <div id="tip1">
+            <p>div1</p>
+            <p>clientHeight：<span id="clientHeight1"></span></p>
+            <p>scrollHeight：<span id="scrollHeight1"></span></p>
+            <p>offsetHeight：<span id="offsetHeight1"></span></p>
+            <p>clientTop：<span id="clientTop1"></span></p>
+            <p>scrollTop：<span id="scrollTop1"></span></p>
+            <p>offsetTop：<span id="offsetTop1"></span></p>
+        </div>
+    </div>
+    <div id="div2" style="border:20px solid">
+        <div id="tip2">
+            <p>div2</p>
+            <p>clientHeight：<span id="clientHeight2"></span></p>
+            <p>scrollHeight：<span id="scrollHeight2"></span></p>
+            <p>offsetHeight：<span id="offsetHeight2"></span></p>
+            <p>clientTop：<span id="clientTop2"></span></p>
+            <p>scrollTop：<span id="scrollTop2"></span></p>
+            <p>offsetTop：<span id="offsetTop2"></span></p>
+        </div>
+    </div>
+</div>
+<script>
+    clientHeight1.innerHTML = div1.clientHeight;
+    scrollHeight1.innerHTML = div1.scrollHeight;
+    offsetHeight1.innerHTML = div1.offsetHeight;
+    clientTop1.innerHTML = div1.clientTop;
+    scrollTop1.innerHTML = div1.scrollTop;
+    offsetTop1.innerHTML = div1.offsetTop;
+    clientHeight2.innerHTML = div2.clientHeight;
+    scrollHeight2.innerHTML = div2.scrollHeight;
+    offsetHeight2.innerHTML = div2.offsetHeight;
+    clientTop2.innerHTML = div2.clientTop;
+    scrollTop2.innerHTML = div2.scrollTop;
+    offsetTop2.innerHTML = div2.offsetTop;
+</script>
+
+<script src="../index.js" type="text/javascript"></script>
+</body>
+</html>
