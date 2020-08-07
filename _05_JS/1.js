@@ -11,3 +11,4 @@ class Bb {
 }
 var bb = new Bb();
 bb.getA;
+
