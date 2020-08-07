@@ -1,7 +1,9 @@
 ## Vuex
+在Vue项目开发时使用的状态管理工具, 将应用中的所有状态都放在一起，集中式来管理
 + 公共状态管理
 + 遵循单向数据流
 + 数据是响应式的 
+
 ### vuex是什么
 Vuex 是一个专为 Vue.js应用程序开发的状态管理模式。
 它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
@@ -48,7 +50,28 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式 <br />
 + **module** 由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。
     + 当应用变得非常复杂时，store 对象就有可能变得相当臃肿。
     + 为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。
+
++ state 存放状态
++ mutations state成员操作
++ getters 加工state成员给外界
++ actions 异步操作
++ modules 模块化状态管理
+
+Vuex提供了mapState、MapGetters、MapActions、mapMutations等辅助函数给开发在vm中处理store。
+
+
 ## 简述vuex的数据传递流程
+
+## Vuex的设计思想
+   
+Vuex的设计思想，借鉴了Flux、Redux，将数据存放到全局的store，再将store挂载到每个vue实例组件中，利用Vue.js的细粒度数据响应机制来进行高效的状态更新。
+
+## Vuex的原理解析
+### 疑问1：vuex的store是如何挂载注入到组件中呢？
+
+
+
+
 ## vuex中的数据在页面刷新后数据消失
 用sessionstorage 或者 localstorage 存储数据
 ```html

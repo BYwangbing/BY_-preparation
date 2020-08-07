@@ -27,10 +27,6 @@
 + 都不内置列数AJAX，Route等功能到核心包，而是以插件的方式加载。
 + 在组件开发中都支持mixins的特性。
 
-不同点：
-+ React依赖Virtual DOM,而Vue.js使用的是DOM模板。React采用的Virtual DOM会对渲染出来的结果做脏检查。
-+ Vue.js在模板中提供了指令，过滤器等，可以非常方便，快捷地操作Virtual DOM。
-
 ### React
 1. React采用特殊的JSX语法
 2. 单向数据流
