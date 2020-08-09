@@ -3,7 +3,6 @@ function transformStr(str) {
     let newStr = '';
     let arr = str.toString().split('-');
     for (let i = 0, length = arr.length; i < length; i++) {
-        console.log(arr[i]);
         if (i === 0) {
         } else {
             newStr += arr[i].substr(0, 1).toLocaleUpperCase();
