@@ -13,13 +13,11 @@ Function.prototype.myApply = function (thisArg, args) {
     delete thisArg[fn];            // 删除我们声明的fn属性
     return result                  // 返回函数执行结果
 };
-
-
 Function.prototype._call = function (thisArgs, ...args) {
     if (typeof this !== "function") {
         throw new TypeError("类型错误")
     }
-   let fn = Symbol('fn');
+    let fn = Symbol('fn');
     thisArgs = thisArgs || window;
     thisArgs[fn] = this;
     const result = thisArgs[fn](...args);
