@@ -32,15 +32,15 @@ function add() {
 console.log(add(1, 2)(4)(5));
 
 function _add() {
-    let _args = [...arguments];
+    let arr = [...arguments];
     let _adder = function () {
-        _args.push(...arguments);
-        return _adder
+        arr.push(...arguments);
+        return _adder;
     };
     _adder.toString = function () {
-        return _args.reduce(function (a, b) {
-            return a+b;
+        return arr.reduce((prev, cur) => {
+            return prev + cur
         })
     };
-    return _adder
+    return _adder;
 }

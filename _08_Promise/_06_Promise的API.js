@@ -69,7 +69,7 @@ Promise.all 方法: (promises) => {}
     说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功, 只要有一个失败了就直接失败
 * */
 // const pAll = Promise.all([p1, p2, p3]);
-const pAll = Promise.all([p1, p2]);
+const pAll = Promise.all([p1, p2, p3]);
 pAll.then(
     values => {
         console.log('Promise.all onResolved(): ' + values);

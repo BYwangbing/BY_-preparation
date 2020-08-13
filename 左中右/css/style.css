@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html,.container{
+    height: 100%;
+}
+/*
+.container{
+    overflow: hidden;
+    padding:0 120px;
+}
+.col{
+    float: left;
+    position: relative;
+}
+.left, .right{
+    width: 120px;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: #0a6cd6;
+}
+.left{
+    left: -120px;
+    margin-left: -100%;
+    height: 100%;
+    background-color: #3399ff;
+}
+.right{
+    margin-left: -120px;
+    height: 100%;
+    right: -120px;
+    background-color: #1AAD19;
+}
+*/
+.container{
+    width: 100%;
+    display: table;
+}
+.col{
+    height: 100%;
+    display: table-cell;
+}
+.main{
+    background-color: #F4374D;
+    margin: 0 120px;
+}
+.left{
+    width: 120px;
+}
+.right{
+    width: 120px;
+    background-color: #0a6cd6;
+}
