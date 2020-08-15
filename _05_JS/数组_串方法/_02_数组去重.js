@@ -15,7 +15,6 @@ let arr1 = [1, 1, 'true', 'true', true, true, 15, 15, false, false, undefined, u
 console.log(unique_1(arr1)); // 这种方法还无法去掉“{}”空对象
 
 /*  二、利用for嵌套for，然后splice去重（ES5中最常用）  */
-
 // 双层循环，外层循环元素，内层循环时比较值。值相同时，则删去这个值
 function unique_2(arr) {
     if (!Array.isArray(arr)) {
@@ -71,7 +70,7 @@ function unique_4(arr) {
     let array = [arr[0]];
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] !== arr[i - 1]) {
-            array.push(arr[i])
+            array.push(arr[i]);
         }
     }
     return array;

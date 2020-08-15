@@ -130,7 +130,7 @@ Vuex的设计思想，借鉴了Flux、Redux，将数据存放到全局的store�
 答： 与数据存储不同，Vuex 解决的主要问题是不同组件间的通信，以达到对当前页面数据状态的管理。既然是状态，它不会是持久化的，在页面刷新或关闭后，数据自动丢失。如果组件比较少，完全可以不用 Vuex。而且，目前有很多基于 Vuex 的插件，结合 localStorage、sessionStorage、IndexDB 等，可以达到数据持久化的目的。
 
 ## vuex中的数据在页面刷新后数据消失
-用sessionstorage 或者 localstorage 存储数据
+用sessionStorage 或者 localstorage 存储数据
 ```html
 存储： sessionStorage.setItem( '名', JSON.stringify(值) )
 使用： sessionStorage.getItem('名') ---得到的值为字符串类型，用JSON.parse()去引号；

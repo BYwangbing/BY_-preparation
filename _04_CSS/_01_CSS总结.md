@@ -130,7 +130,7 @@ CSS三大特性—— 继承、 优先级和层叠
 + 左右横排的盒子之间的间距是两者的外边距相加
 + 当两个垂直外边距相遇时，他们将形成一个外边距，合并后的外边距高度等于两个发生合并的外边距的高度中的较大者。
 + **注意**：只有普通文档流中块框的垂直外边距才会发生外边距合并，行内框、浮动框或绝对定位之间的外边距不会合并。
-## BFC(BFC内的外边距不与外部的外边距发生重叠)
+## BFC (BFC内的外边距不与外部的外边距发生重叠)
 BFC(Block Formatting Context)：块级格式化上下文
 ### 如何创建BFC
 1. body 根元素(html)
@@ -168,4 +168,8 @@ BFC元素垂直方向的边距会发生重叠。属于不同BFC外边距不会�
 6. 填充内容的改变，比如文本的改变或图片大小改变而引起的计算值宽度和高度的改变;
 7. 读取某些元素属性: ( offsetLeft/Top/Height/Width，clientTop/Left/Width/Height,
   scrollTop/Left/Width/Height，width/height, getComputedStyle()， currentStyle(IE) )
-
+## 高度塌陷以及解决方法
+### 开启BFC属性
++ BFC 的区域不会与 float 元素 重叠
++ 开启BFC的元素可以包含浮动的子元素
++ 父元素的垂直外边距不会和子元素重叠

@@ -2,13 +2,17 @@ let arr = ['吃饭饭', '睡觉觉', '打豆豆'];
 /*// 1. 检测数组
 console.log(arr instanceof Array);
 console.log(Array.isArray(arr))*/
-;
 /*
 1.Array.isArray(arr)
 2.Object.prototype.toString.call(arr) === '[Object Array]'
 3.arr instanceof Array
 4.array.constructor === Array
  */
+/*
+* 除了对象之外，其他的数据类型的toString返回的都是内容的字符创，
+* 只有对象的toString方法会返回对象的类型。
+*
+* */
 /*
 二. 转换方法：
     toLocaleString(),　　// 把数组转换为本地字符串

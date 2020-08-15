@@ -14,3 +14,4 @@ console.log([] ? true : false);
 console.log(Boolean([]));*/
 console.log([] == ![]);
 console.log([] == true);
+console.log(true == ![]);
