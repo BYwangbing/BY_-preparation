@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>如何渲染10000条数据在dom节点上</title>
+</head>
+<body>
+<div>
+    <ul id="root"></ul>
+</div>
+<script>
+    function createOneHundredThousandData() {
+        let arr = [];
+        for (let i = 0; i < 100000; i++) {
+            arr.push({
+                imgUrl: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
+                key: i
+            })
+        }
+        return arr;
+    }
+
+    var beginTime = performance.now();
+    console.log('beginTime', beginTime);
+    let h = [];
+    let data = createOneHundredThousandData()
+    // 写法1 原生js 的 for循环
+    for (let i = 0; i < data.length; i++) {
+        h.push('<li>' + '<img src="' + data[i].imgUrl + '" \/>' + 'current index ' + data[i].key + '<\/li>');
+    }
+    // 写法2 数组自带的map方法
+    // h = data.map((item,index)=>'<li>' + '<img src="'+ item.imgUrl +'" \/>'+ 'current index ' + item.key + '<\/li>');
+    document.getElementById('root').innerHTML = h.join('');
+    document.addEventListener('DOMContentLoaded', function () {
+        var endTime = performance.now();
+        console.log('DOMContentLoaded endTime', endTime);
+        var total = ((endTime - beginTime) / 1000).toFixed(5);
+        console.log('DOMContentLoaded render 100000 items takes ' + total + ' 秒');
+    });
+    window.onload = function () {
+        var endTime = performance.now();
+        console.log('window.onload endTime', endTime);
+        var total = ((endTime - beginTime) / 1000).toFixed(5);
+        console.log('window.onload render 100000 items takes ' + total + ' 秒');
+    }
+</script>
+</body>
+</html>

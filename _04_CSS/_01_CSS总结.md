@@ -169,7 +169,71 @@ BFC元素垂直方向的边距会发生重叠。属于不同BFC外边距不会�
 7. 读取某些元素属性: ( offsetLeft/Top/Height/Width，clientTop/Left/Width/Height,
   scrollTop/Left/Width/Height，width/height, getComputedStyle()， currentStyle(IE) )
 ## 高度塌陷以及解决方法
+1. 父元素的高度写死 不推荐
+2. 可以直接在高度塌陷的父元素的最后，添加一个空白的div 不推荐
+3. 通过after伪类来选中父元素的后面
+```css
+.clear-fix:after{
+    content:"";
+    display:block;
+    height:0;
+    clear:both;
+    overflow:hidden;
+    visibility:hidden;
+}
+```
 ### 开启BFC属性
 + BFC 的区域不会与 float 元素 重叠
 + 开启BFC的元素可以包含浮动的子元素
 + 父元素的垂直外边距不会和子元素重叠
+## background-position和雪碧图(CSS Sprites)用法
+为了减少http请求数，会将大量的图片图片合成一张雪碧图（Sprite）来使用。
+雪碧图的使用就是通过控制background-position属性值来确定图片呈现的位置
+### background-position
++ background-position 属性设置背景图像的起始位置
++ background-position：x | y，用法上可以对其一个属性单独使用 background-position-x 和 background-position-y
+![Image text](img/css雪碧图.png)
+background-position 属性的作用：设置背景图像的起始位置
++ 起始位置是相对于自身容器而言
+ + 数值 background-position：100px 50px 意味着图片在距离自身容器x轴为100px、y轴为50px的位置作为图片显示的起点位置
+ + 百分比 以自身容器的长宽 减去 图片的长宽 乘以 百分比 所得的数值来确定图片的起始位置
+    + 例如：background-position：50% 50%
+ >公式：
+  （容器自身的宽度/高度 - 图片自身的宽度/高度） x 百分比 
+
+提示：
++ background-position属性值如果是数值，那么指相对于容器自身数值的距离作为起始位置；
++ 如果是百分比或者是方向，那么指的是相对于容器自身（容器自身的宽度/高度 - 图片自身的宽度/高度） x 百分比 所得的数值作为起始位置
++ 如果不设置background-position属性值，那么默认起始位置为background-position：0% 0%
++ 方向值和百分比的计算方式是一样的，它们可以相互转换，left：0%，right：100%，center：50%
++ 如果background-position属性值只设置一个，那么另一个默认为center
+### 二、雪碧图
+CSS雪碧图即CSS Sprites 是一种CSS图像合并技术
+将小图标和背景图像合并到一张图片上，然后利用CSS的背景定位来显示需要显示的图片部分
+#### 为什么使用雪碧图时background-position属性值为负数
+始终记住一个概念，background-position设置的是雪碧图相对于盒子的起始位置
+#### 为什么要使用雪碧图
+网站开发90%会用到小图标， 多小图标调用显示是前端开发常见的问题
+如果每个小图标都单独调用一张图片， 即意味着每个小图标的显示都产生一个HTTP请求；
+每个请求都需要一定的性能开销，主要在请求、以及响应阶段。
+为了减少http请求数量，加速网页内容显示，很多网站的导航栏图标、登录框图片等，使用的并不是<image>标签，而是CSS Sprite雪碧图。
+#### 使用雪碧图的优点有以下几点：
++ 通过将多张图片合并成一张，可以有效减少 HTTP 请求，提高页面加载的性能
++ 将多张图片合并到一张图片中，可以减小图片的总大小
++ 整理起来更为方便，同一个按钮不同状态的图片也不需要一个个切割出来并个别命名
++ 只需要修改一张或少张图片的颜色或样式来改变整个网页的风格
++ 只需对一张集合的图片命名，不需要对每一个小图片进行命名，从而提高了网页制作效率
++ 图片变成一张肯定所占位置更少，减少加载时间，增强用户体验
+
+缺点
++ 合成起来麻烦
++ 适应性差
++ 可维护性差 
++ 背景大小，容易出现断裂，相比之下不是直接替换照片，而是利用PS来测量好每一个的位置，环节繁琐一些，当然更改部分元素的同时需要动整体，也比较麻烦一些
++ 小图标在高清屏幕上可能会失真，另外频繁使用定位会占用比较多的CPU
+
+图片拼合技术适用于网页上图标相对不会变动的情况下，像经常会用于更新更改的区域，更换图片等等的并不建议使用。
+
+background-attachment 属性必须设置为 "fixed"
+#### 背景吸附 background-attachment：fixed
+
