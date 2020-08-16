@@ -115,6 +115,9 @@ import()方法是由es6提出的，动态加载返回一个Promise对象，then�
 + vue-router 默认 hash 模式，还有一种是history模式
 + hash模式的工作原理是hashchange事件，可以在window监听hash的变化
 + history模式利用了 HTML5 History Interface 中新增的 pushState() 和 replaceState() 方法
+### 解决history模式下打包空白和刷新404的问题
++ 在config/index.js中将assetsPublicPath原来的’/‘修改为‘./’
+
 ## Vue里面router-link在电脑上有用，在安卓上没反应怎么解决
 Vue路由在Android机上有问题，babel问题，安装babel polypill插件解决
 ## Vue2中注册在router-link上事件无效解决方法
