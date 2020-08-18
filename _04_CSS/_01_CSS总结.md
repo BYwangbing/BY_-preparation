@@ -237,3 +237,6 @@ CSS雪碧图即CSS Sprites 是一种CSS图像合并技术
 background-attachment 属性必须设置为 "fixed"
 #### 背景吸附 background-attachment：fixed
 
+## 重排重绘
+> blog.csdn.net/qq_42098849/article/details/105432195
+

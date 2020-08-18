@@ -9,7 +9,7 @@ console.log(arr_1.flat());
 /!* 2.序列化后正则 *!/
 console.log('----------------2.序列化后正则----------------');
 const arr_2 = [1, [1, 2], [1, 2, 3]];
-// const _str = `${JSON.stringify(arr_2).replace(/(\[|\])/g, '')}`;
+// const _str = `[${JSON.stringify(arr_2).replace(/(\[|\])/g, '')}]`;
 const str = `[${JSON.stringify(arr_2).replace(/(\[|\])/g, '')}]`;
 console.log(JSON.parse(str));
 
