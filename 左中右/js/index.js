@@ -4,7 +4,6 @@ function fn(str) {
         let key = str[i];
         obj[key] ? obj[key]++ : obj[key] = 1;
     }
-    console.log(obj); //输出的是完整的对象，记录着每一个字符及其出现的次数
     let count = 0;
     let _string = "";
     for (let key in obj) {

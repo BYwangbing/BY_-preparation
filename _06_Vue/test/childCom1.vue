@@ -1,4 +1,4 @@
-// childCom1.vue
+<!--        childCom1.vue-->
 
 <template class="border">
     <div>

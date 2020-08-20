@@ -22,7 +22,7 @@
 
 ## DOM的操作
 ![Image text](img/DOM.gif)
-## 行内元素块级元素
+## 行内元素 块级元素
 + 行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效
 + 块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素
 + 行内元素与块级元素直观上的区别

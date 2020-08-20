@@ -1,3 +1,7 @@
+### 观察者-订阅者（数据劫持）
+![Image text](img/观察者_订阅者(数据劫持).jpg)
+vue Observer 数据监听器，把一个普通的 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用Object.defineProperty()方法把这些属性全部转成setter、getter方法。当data中的某个属性被访问时，则会调用getter方法，当data中的属性被改变时，则会调用setter方法。Compile指令解析器，它的作用对每个元素节点的指令进行解析，替换模板数据，并绑定对应的更新函数，初始化相应的订阅。Watcher 订阅者，作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。Dep 消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。
+
 ### vue实现数据双向绑定主要是：
 + 采用 **数据劫持** 结合 **发布者-订阅者模式** 的方式，数据和视图同步，数据发生变化，视图跟着变化，视图变化，数据也随之发生改变
 + 核心( Vue2.0 )：通过Object.defineProperty（）来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调。

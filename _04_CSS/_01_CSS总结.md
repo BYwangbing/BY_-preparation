@@ -137,7 +137,7 @@ BFC(Block Formatting Context)：块级格式化上下文
 2. overflow不为visible;
 3. float的值不为none；
 4. position的值不为static或relative；
-5. display属性为inline-blocks,table,table-cell,table-caption,flex,inline-flex;
+5. display属性为inline-block,table,table-cell,table-caption,flex,inline-flex;
 ## 定位布局规则 / BFC的原理（渲染规则）
 1. 内部的 Box 会在垂直方向上一个接一个放置。
 2. Box 垂直方向的距离由 margin 决定（按照最大margin值设置），属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠。<br/>
@@ -240,3 +240,9 @@ background-attachment 属性必须设置为 "fixed"
 ## 重排重绘
 > blog.csdn.net/qq_42098849/article/details/105432195
 
+## Bootstrap响应式布局原理
++ 响应式布局，主要是为移动端提出的
++ 通过CSS3 Media Queries（媒体（设备）查询）
++ Bootstrap主要用到min-width、max-width，以及and语法，用于在不同的分辨率下设置不同的CSS样式。
++ Bootstrap响应式布局是利用其栅格系统，对于不同的屏幕采用不同的类属性
++ 通过定义容器大小,平分12份(最多)再调整内外边距，最后结合媒体查询，就制作出了强大的响应式网格系统

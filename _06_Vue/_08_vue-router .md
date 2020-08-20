@@ -27,6 +27,9 @@ vue-router： router-link router-view
 + 使用CDN加速
     - 在做项目时，我们会用到很多库，采用cdn加载可以加快加载速度。
 + 异步加载组件
+`component: ()=>import("@/components/pages/signIn/signIn")`
+`component: resolve=>require(["@/components/pages/signIn/signIn"],resolve),`
+
 + 服务端渲染
     + 服务端渲染还能对seo优化起到作用，有利于搜索引擎抓取更多有用的信息（如果页面纯前端渲染，搜索引擎抓取到的就只是空页面）
 

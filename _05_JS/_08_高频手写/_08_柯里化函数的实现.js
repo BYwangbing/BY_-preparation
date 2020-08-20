@@ -44,3 +44,16 @@ function _add() {
     };
     return _adder;
 }
+
+var out = 25,
+    inner = {
+        out: 20,
+        fun: function () {
+            var out = 30;
+            return this.out
+        }
+    };
+console.log((inner.fun, inner.fun)());
+console.log(inner.fun());
+console.log((inner.fun)());
+console.log((inner.fun = inner.fun)());

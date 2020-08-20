@@ -120,14 +120,19 @@ Vuex的设计思想，借鉴了Flux、Redux，将数据存放到全局的store�
 
 ## Vuex的原理解析
 ### 疑问1：vuex的store是如何挂载注入到组件中呢？
-
+>https://www.segmentfault.com/a/1190000021860805?utm_source=tag-newest
 
 ## 为什么要用vuex？
 最近尝试用vue做项目，使用了vuex管理状态，但是发现一个问题：
 
 就是页面刷新后vuex里面的数据就清空掉了，所以基本上我在vuex里面存的数据都要在浏览器里面存一次，那么问题来了，请问为什么不直接就把数据存到浏览器里面呢，还要存到vuex里面多此一举？
 
-答： 与数据存储不同，Vuex 解决的主要问题是不同组件间的通信，以达到对当前页面数据状态的管理。既然是状态，它不会是持久化的，在页面刷新或关闭后，数据自动丢失。如果组件比较少，完全可以不用 Vuex。而且，目前有很多基于 Vuex 的插件，结合 localStorage、sessionStorage、IndexDB 等，可以达到数据持久化的目的。
+答： 
++ vuex 是 vue 的状态管理器，存储的数据是响应式的
++ 与数据存储不同，Vuex 解决的主要问题是不同组件间的通信，以达到对当前页面数据状态的管理。
++ 既然是状态，它不会是持久化的，在页面刷新或关闭后，数据自动丢失。
++ 如果组件比较少，完全可以不用 Vuex。
++ 而且，目前有很多基于 Vuex 的插件，结合 localStorage、sessionStorage、IndexDB 等，可以达到数据持久化的目的。
 
 ## vuex中的数据在页面刷新后数据消失
 用sessionStorage 或者 localstorage 存储数据
