@@ -20,7 +20,7 @@ vue Observer 数据监听器，把一个普通的 JavaScript 对象传给 Vue �
     4. 新标准性能红利 
         + Proxy 作为新标准，长远来看，JS引擎会继续优化 Proxy ，但 getter 和 setter 基本不会再有针对性优化。
     5. Proxy兼容性差
-
+>https://blog.csdn.net/qq_27127385/article/details/103959956
 ### 总结：
 + Object.defineProperty 对数组和对象的表现一直，并非不能监控数组下标的变化，vue2.x中无法通过数组索引来实现响应式数据的自动更新是vue本身的设计导致的，不是 defineProperty 的锅。
 + Object.defineProperty 和 Proxy 本质差别是，defineProperty 只能对属性进行劫持，所以出现了需要递归遍历，新增属性需要手动 Observe 的问题。

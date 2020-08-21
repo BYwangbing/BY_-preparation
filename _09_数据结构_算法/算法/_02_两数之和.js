@@ -14,6 +14,11 @@ let twoSum = (nums, target) => {
         hashSet[nums[i]] = i;                    // 每次都存入当前元素和对应的索引
     }
 };
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var _twoSum = function (nums, target) {
     let map = new Map();
     for (let i = 0; i < nums.length; i++) {

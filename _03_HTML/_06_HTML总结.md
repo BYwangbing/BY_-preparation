@@ -18,7 +18,7 @@
 + 在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；而 inline 布局则是在水平方向来排列
 + 弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。
 
->cnblogs.com/sugartang/p/11342453.html
+> https://www.cnblogs.com/sugartang/p/11342453.html
 
 ## DOM的操作
 ![Image text](img/DOM.gif)
