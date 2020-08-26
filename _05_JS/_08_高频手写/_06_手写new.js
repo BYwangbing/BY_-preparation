@@ -1,5 +1,5 @@
 function _new(Fn, ...args) {
-    // 创建一个空对象， 让它的原型链指向Fn.prototype（Fn的一个实例）
+    // 创建一个空对象， 让它的原型链指向Fn.prototype
     // let  obj = {};
     // obj.__proto__ = Fn.prototype;
     let obj = Object.create(Fn.prototype);

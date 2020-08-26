@@ -28,3 +28,9 @@ Session 对象用来存储特定用户会话所需的信息。 Session由服务�
 ## 易用性：
 + cookie：需要程序员自己封装，源生的Cookie接口不友好
 + localStorage和sessionStorage：源生接口可以接受，亦可再次封装来对Object和Array有更好的支持
+## localstorage sessionStorage
++ 同一浏览器的相同域名和端口的不同页面间可以共享相同的 localStorage
++ 不同页面间无法共享sessionStorage的信息 页面仅指顶级窗口
++ 如果一个页面包含多个iframe且他们属于同源页面，那么他们之间是可以共享sessionStorage
+
+: 不存储数据, 也不会覆盖现有数据; 会报错引发异常。localstorage超容量

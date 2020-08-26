@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .change {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background: #5f55af;
+            opacity: 1;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: change 2s infinite ease-in-out;
+
+
+        }
+
+        @keyframes change {
+            0% {
+                transform: scale(0);
+                opacity: 100;
+                -webkit-transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+        }
+        .circle {
+            width: 75px;
+            height: 75px;
+            margin: 20px auto;
+            background-color: #F4374D;
+            border-radius: 100%;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100px;
+
+            transform: translate(400px, 0px);
+            -webkit-transform: translate(400px, 0px);
+
+            animation: dh 1s infinite ease-in-out;
+            -webkit-animation: dh 1s infinite ease-in-out;
+        }
+
+        @keyframes dh {
+            0% {
+                transform: scale(0);
+                opacity: 100;
+                -webkit-transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+
+        }
+
+        @-webkit-keyframes dh {
+            0% {
+                transform: scale(0);
+                opacity: 100;
+                -webkit-transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+                -webkit-transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="change"></div>
+<div class="circle"></div>
+</body>
+</html>

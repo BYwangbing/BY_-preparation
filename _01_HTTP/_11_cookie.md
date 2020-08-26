@@ -14,6 +14,7 @@ cookie是由服务器产生的，并由客户端和服务器使用
 客户端接收到这个响应后,将Cookie 保存到客户端。
 当客户端再次发送同类请求后，在请求中会携带保存在客户端的Cookie 数据，发送到服务端，由服务器对会话进行跟踪。
 
+
 ## Cookie 分类
 + Cookie总是保存在客户端中，按在客户端中的存储位置，可分为内存Cookie和硬盘Cookie.
 + 内存Cookie由浏览器维护，保存在内存中，浏览器关闭后就消失了，其存在时间是短暂的。
@@ -67,6 +68,13 @@ Set-Cookie: <name>=<value>[; <name>=<value>]...
 +  secure   : 指定是否使用HTTPS安全协议发送Cookie
 + httponly : 用于防止客户端脚本通过document.cookie属性访问Cookie，有助于保护Cookie不被跨站脚本攻击窃取或篡改
     + 能有效的防止XSS攻击
+
+## Cookie的属性
++ Domain：域
++ Path：表示cookie的所属路径
++ Expire time/Max-age：表示了cookie的有效期。
++ secure：表示该cookie只能用https传输。 一般用于包含认证信息的cookie，要求传输此cookie的时候，必须用https传输
++ httponly：表示此cookie必须用于http或https传输。这意味着，浏览器脚本，比如javascript中，是不允许访问操作此cookie的。
 
 
 ## cookie的特点

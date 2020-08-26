@@ -19,10 +19,14 @@
 + 弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。
 
 > https://www.cnblogs.com/sugartang/p/11342453.html
-
 ## DOM的操作
-![Image text](img/DOM.gif)
+![Image text](../img/DOM.gif)
 ## 行内元素 块级元素
 + 行内元素设置width无效，height无效(可以设置line-height)，margin上下无效，padding上下无效
 + 块级元素可以包含行内元素和块级元素。行内元素不能包含块级元素
 + 行内元素与块级元素直观上的区别
+## 为何img、input等内联元素可以设置宽、高
+替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。
+## `querySelectorAll`
++ `querySelectorAll()` 方法返回文档中匹配指定 CSS 选择器的所有元素，返回 NodeList 对象。
++ `NodeList` 对象表示节点的集合。可以通过索引访问，索引值从 0 开始。

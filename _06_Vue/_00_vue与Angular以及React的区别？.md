@@ -27,6 +27,9 @@
 + 都不内置列数AJAX，Route等功能到核心包，而是以插件的方式加载。
 + 在组件开发中都支持mixins的特性。
 
+### React与Angular有何不同
+![Image text](img/React_Angular.jpg)
+
 ### React
 1. React采用特殊的JSX语法
 2. 单向数据流

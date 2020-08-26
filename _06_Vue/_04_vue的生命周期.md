@@ -17,7 +17,7 @@
 
 6. 生命周期：总共分为8个阶段创建前/后，载入前/后，更新前/后，销毁前/后
 
-+  beforeCreate（创建前） 在数据观测和初始化事件还未开始
++ beforeCreate（创建前） 在数据观测和初始化事件还未开始
 + created（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来
 + beforeMount（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。
 + mounted（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html页面中。此过程中进行ajax交互。
@@ -30,3 +30,9 @@
 activated && deactivated:
 + activated：当组件为活跃状态的时候触发(活跃状态：进入页面的时候)
 + deactivated：缓存状态的时候触发
+
+### created与mounted的区别
++ created:在模板渲染成html前调用，即通常初始化某些属性值，然后再渲染成视图
++ mounted:在模板渲染成html后调用，通常是初始化页面完成后，再对html的dom节点进行一些需要的操作
+
+![Image text](img/生命周期.jpg)

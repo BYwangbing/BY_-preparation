@@ -1,4 +1,4 @@
-https://blog.csdn.net/qq_42364543/article/details/107793441
+> https://blog.csdn.net/qq_42364543/article/details/107793441
 
 + HTTP是超文本传输协议，信息是明文传输，HTTPS则是具有安全性的SSL/TLS加密传输协议
 + HTTP和HTTPS使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443
@@ -13,9 +13,13 @@ https://blog.csdn.net/qq_42364543/article/details/107793441
 >https://www.cnblogs.com/czsy/p/10849159.html
 >https://www.jianshu.com/p/e30a8c4fa329
 ## HTTP加密流程
-HTTPS是通过SSL(安全套接层)和TLS(安全传输协议)的组合使用，加密TCP载荷即HTTP报文内容，
-同时通过不对称密钥方式认证身份，保证传输的安全可靠
-即： HTTP+加密+认证+完整性保护=HTTPS
++ HTTPS是通过SSL(安全套接层)和TLS(安全传输协议)的组合使用，加密TCP载荷即HTTP报文内容，
++ 同时通过不对称密钥方式认证身份，保证传输的安全可靠
++ 即： HTTP+加密+认证+完整性保护=HTTPS
+
++ 原本HTTP先和TCP（假定传输层是TCP协议）直接通信，
++ 而加了SSL后，就变成HTTP先和SSL通信，再由SSL和TCP通信，
++ 相当于SSL被嵌在了HTTP和TCP之间
 
 ### 共享密钥加密 （对称密钥加密） 
 采用的是使用相同密钥对报文进行加密解密

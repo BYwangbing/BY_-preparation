@@ -15,6 +15,7 @@ props: {
 },
 ```
 ### v-for key的作用
+
 ### vue初始化页面闪动问题
     在css里加上[v-cloak] {
         display: none;

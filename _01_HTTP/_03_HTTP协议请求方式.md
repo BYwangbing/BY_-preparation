@@ -1,6 +1,7 @@
+> https://www.runoob.com/http/http-methods.html
+
 GET一般用于获取/查询资源信息，而POST一般用于更新资源信息
 + DELETE： 请求服务器删除指定的页面
-
 + PATCH： 实体中包含一个表，表中说明与该URI所表示的原内容的区别。
 + TRACE： 请求服务器在响应中的实体主体部分返回所得到的内容。
 + CONNECT: HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。

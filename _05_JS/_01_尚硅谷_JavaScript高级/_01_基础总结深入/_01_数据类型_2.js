@@ -11,7 +11,6 @@
 * 2）对象属性名不存在时，显示undefined
 * 3）函数没有写返回值，即没有写return，拿到的是undefined
 * 4）写了return，但没有赋值，拿到的是undefined
-
 * */
 console.log(null == undefined); // true
 console.log(null === undefined); // false
