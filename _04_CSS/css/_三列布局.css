@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: '宋体', serif;
+}
+
+p {
+    margin: 12px 0;
+}
+
+.left1 {
+    width: 200px;
+    background: green;
+    float: left;
+}
+
+.center1 {
+    background: yellow;
+}
+
+.right1 {
+    width: 200px;
+    background: blue;
+    float: right;
+}
+
+.container {
+    position: relative;
+}
+
+.left {
+    width: 200px;
+    background: green;
+    position: absolute;
+    left: 0;
+}
+
+.center {
+    background: yellow;
+    position: absolute;
+    left: 200px;
+    right: 200px;
+}
+
+.right {
+    width: 200px;
+    background: blue;
+    position: absolute;
+    right: 0;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.left2 {
+    flex-basis: 200px;
+    width: 200px;
+    background: green;
+}
+
+.center2 {
+    flex-grow: 1;
+    background: yellow;
+}
+
+.right2 {
+    /* flex-basis 的优先级比 width 高 */
+    flex-basis: 200px;
+    width: 200px;
+    background: blue;
+}
+
+.container3 {
+    display: table;
+    width: 100%;
+}
+
+.left3 {
+    display: table-cell;
+    width: 200px;
+    background: green;
+}
+
+.center3 {
+    display: table-cell;
+    background: yellow;
+}
+
+.right3 {
+    display: table-cell;
+    width: 200px;
+    background: blue;
+}
+
+.container4 {
+    display: grid;
+    grid-template-columns: 200px auto 200px; /*左侧宽度  中间宽度 右侧宽度*/
+    /*grid-template-rows: 30px; !*行显示的高度*!*/
+}
+
+.left4 {
+    background: green;
+}
+
+.center4 {
+    background: yellow;
+}
+
+.right4 {
+    background: blue;
+}
+
+.grail-container {
+    padding: 0 200px;
+    overflow: hidden;
+}
+
+.grail-col {
+    float: left;
+    position: relative;
+}
+
+.grail-left {
+    width: 200px;
+    left: -200px;
+    margin-left: -100%;
+    background: green;
+}
+
+.grail-main {
+    width: 100%;
+    background-color: #3399ff;
+}
+
+.grail-right {
+    width: 200px;
+    background: blue;
+    right: -200px;
+    margin-left: -200px;
+}
+
+.wing-container {
+    overflow: hidden;
+}
+.wing-main {
+    width: 100%;
+    float: left;
+    background-color: #3399ff;
+}
+
+.wing-sub-main {
+    margin: 0 200px;
+}
+
+.wing-left {
+    float: left;
+    width: 200px;
+    margin-left: -100%;
+    background: green;
+}
+
+.wing-right {
+    float: left;
+    width: 200px;
+    margin-left: -200px;
+    background: blue;
+}
+
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 12px;
+    background-color: #1AAD19;
+}
+
+.rapper {
+    height: 12px;
+    margin-top: 20px;
+    background-color: #3399ff;
+}

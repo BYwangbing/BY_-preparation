@@ -30,3 +30,35 @@
 ## `querySelectorAll`
 + `querySelectorAll()` 方法返回文档中匹配指定 CSS 选择器的所有元素，返回 NodeList 对象。
 + `NodeList` 对象表示节点的集合。可以通过索引访问，索引值从 0 开始。
+## svg与canvas画布的区别
+https://blog.csdn.net/qq_42098849/article/details/104730475
+## 字体大小自适应容器宽度
++ 通过计算原有font-size下文案所撑起的宽度，
++ 除以容器宽度（这里设定容器宽度为屏幕宽度），
++ 得出需要缩放的系数，将系数换算成百分比赋值给font-size即可。
+1. 方向一 动态计算字体大小
+```html
+<div class="hd hd1">
+    <span class="hd-text">这个标题很长哦可能一行放不下的怎么办呢</span>
+</div>
+<script>
+    var hdWidth = document.body.getBoundingClientRect().width;
+    var textWidth = document.getElementsByClassName('hd-text')[0].offsetWidth;
+    var scale = hdWidth / textWidth;
+    document.getElementsByClassName('hd-text')[0].style.fontSize = scale * 100 + '%';
+</script>
+```
+2. 方向二 缩放容器
++ 该方案类似方案一，只是缩放的不是font-size，而是通过缩放容器。
++ 使用transform的scale或zoom，其中transform的scale需要设定transform-origin: 0 0;且只对block元素有效（inline-block也有效）
+```html
+<div class="hd">
+    <span class="hd-text">这个标题很长哦可能一行放不下的怎么办呢</span>
+</div>
+<script>
+    var hdWidth = document.body.getBoundingClientRect().width;
+    var textWidth = document.getElementsByClassName('hd-text')[0].offsetWidth;
+    var scale = hdWidth / textWidth;
+    document.getElementsByClassName('hd-text')[0].style.zoom = scale;
+</script>
+```

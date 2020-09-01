@@ -11,6 +11,16 @@
 obj.c(); // 1 ?
 obj.d();*/
 
+/*var a = {
+    name: 'byteDance',
+    func: function() {
+        console.log(this.name);
+    }
+};
+
+var fun1 = a.func;
+fun1();*/
+
 /*this.x = 9;    // this refers to global "window" object here in the browser
 var module = {
     x: 81,
@@ -85,7 +95,35 @@ var object = {
     }
 };
 console.log(object.getNameFunc()());*/
-var result = 123;
-function f() {
 
+/*function sidEffecting(ary) {
+    ary[0] = ary[2];
 }
+
+function bar(a, b, c) {
+    c = 10;
+    sidEffecting(arguments);
+    return a + b + c;
+}
+
+function demo(arg) {
+    arg.name = 'new Name'
+}
+
+console.log(bar(2, 2, 2));*/
+/*
+* 当非严格模式中的函数「有」包含剩余参数、默认参数和解构赋值，
+* 那么arguments对象中的值「不会」跟踪参数的值（反之亦然）。
+* */
+function sidEffecting(ary) {
+    ary[0] = ary[2];
+}
+function bar(a, b, c = 4) {
+    c = 10;
+    sidEffecting(arguments);
+    return a + b + c;
+}
+function demo (arg) {
+    arg.name = 'new Name'
+}
+console.log(bar(2, 2, 2));

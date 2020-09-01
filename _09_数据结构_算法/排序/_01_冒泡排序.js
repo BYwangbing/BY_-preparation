@@ -12,3 +12,7 @@ function bubbleSort(array) {
     }
     return array;
 }
+
+[[0, 1], [2, 3]].reduce(
+    (acc, cur) => acc.concat(cur), [1, 2]
+);

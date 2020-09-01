@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/_三列布局.css">
+</head>
+<body>
+<h2>1.浮动布局 （ float ）</h2>
+<p>设置左侧盒子左浮动，右侧盒子右浮动； 中间盒子的 Dom 写在最后。</p>
+<div class="container1">
+    <div class="left1"> left</div>
+    <div class="right1"> right</div>
+    <div class="center1"> center</div>
+</div>
+<h2>2. 绝对定位布局 （absolute）</h2>
+<p>设置父元素 position:relative; 子元素position:absolute; 左侧盒子的 left:0; 右侧盒子的right:0; 中间盒子的left:左侧盒子的宽度，right:右侧盒子的宽度。</p>
+<div class="container">
+    <div class="left"> left</div>
+    <div class="center"> center</div>
+    <div class="right"> right</div>
+</div>
+<div style="height: 32px"></div>
+<h2>3.弹性布局 （flex）</h2>
+<ul>
+    <li>设置父元素 display:flex; 和 flex-decoration:row;</li>
+    <li>设置左侧和右侧的盒子 flex-basis:希望显示的宽度; （注意：该属性的优先级高于 width ）</li>
+    <li>设置中间盒子的 flex-grow:1; (该属性定义元素的放大比例，默认为0，此时剩余空间都会被该元素占满)</li>
+</ul>
+<div class="container2">
+    <div class="left2"> left</div>
+    <div class="center2"> center</div>
+    <div class="right2"> right</div>
+</div>
+<h2>4. 表格布局 ( table )</h2>
+<p>设置父元素 display:table; 和 width:100%; 设置所有子元素的 display:table-cell; 设置左侧盒子和右侧盒子 的宽度；</p>
+<div class="container3">
+    <div class="left3"> left</div>
+    <div class="center3"> center</div>
+    <div class="right3"> right</div>
+</div>
+<h2>5. 网格布局（grid ） </h2>
+<p>设置父元素 display:grid; grid-template-columns:左侧宽度 中间宽度 右侧宽度； grid-template-rows:行显示的高度； </p>
+<div class="container4">
+    <div class="left4"> left</div>
+    <div class="center4"> center</div>
+    <div class="right4"> right</div>
+</div>
+<h2>5. 圣杯布局 </h2>
+<p></p>
+<div class="grail-container">
+    <div class="grail-main grail-col"> center</div>
+    <div class="grail-left grail-col"> left</div>
+    <div class="grail-right grail-col"> right</div>
+</div>
+<h2>6. 双飞翼布局</h2>
+<div class="wing-container">
+    <div class="wing-main wing-col">
+        <div class="wing-sub-main">center</div>
+    </div>
+    <div class="wing-left wing-col">left</div>
+    <div class="wing-right wing-col">right</div>
+</div>
+<div class="wrapper"></div>
+<div class="rapper"></div>
+</body>
+<script type="text/javascript">
+    console.log([] == ![]);
+    console.log([] == !{});
+    console.log('' == []);
+</script>
+</html>

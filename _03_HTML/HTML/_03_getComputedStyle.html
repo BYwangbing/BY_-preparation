@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .button {
+            height: 2em;
+            border: 0;
+            border-radius: .2em;
+            background-color: #34538b;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<!--
+getComputedStyle是一个可以获取当前元素所有最终使用的CSS属性值
+返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，只读
+语法： var style = window.getComputedStyle("元素", "伪类");
+之前：第二个参数“伪类”是必需的（如果不是伪类，设置为null），不过现在嘛，不是必需参数
+用法：
+    var dom = document.getElementById("test"),
+    style = window.getComputedStyle(dom , ":after");
+
+使用element.style也可以获取元素的CSS样式声明对象
+getComputedStyle方法是只读的，只能获取样式，不能设置；而element.style能读能写，能屈能伸
+
+getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象（即使没有CSS代码，也会把默认的祖宗八代都显示出来）；
+而element.style只能获取元素style属性中的CSS样式。
+
+getComputedStyle与defaultView
+jQuery源代码，会发现，其css()方法实现不是使用的window.getComputedStyle而是document.defaultView.getComputedStyle
+在FireFox3.6上不使用defaultView方法就搞不定的
+
+getComputedStyle与currentStyle
+currentStyle是IE浏览器自娱自乐的一个属性，其与element.style可以说是近亲，至少在使用形式上类似，
+element.currentStyle，差别在于element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等）
+
+从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近。
+不过，currentStyle属性貌似不支持伪类样式获取，这是与getComputedStyle方法的差异，也是jQuery css()方法无法体现的一点。
+
+-->
+<input type="button" id="button" class="button" value="点击我，显示我"/>
+<p id="detail"></p>
+</body>
+<script type="text/javascript">
+    // alert((element.currentStyle ? element.currentStyle : window.getComputedStyle(element, null)).height);
+    var oButton = document.getElementById("button"),
+        oDetail = document.getElementById("detail");
+
+    if (oButton && oDetail) {
+        oButton.onclick = function () {
+            const oStyle = this.currentStyle ? this.currentStyle : window.getComputedStyle(this, false);
+
+            let key, html = '本按钮CSS属性名和属性值依次为(' + !!this.currentStyle + ')：';
+            if (typeof oStyle === "object") {
+                for (key in oStyle) {
+                    if (/^[a-z]/i.test(key) && oStyle[key]) {
+                        html = html + '' + key + ":" + oStyle[key] + '';
+                    }
+                }
+            } else {
+                html += '无法获取CSS样式！';
+            }
+
+            oDetail.innerHTML = html;
+        };
+    }
+</script>
+</html>

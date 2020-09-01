@@ -11,3 +11,12 @@
     * 全局上下文环境==>全局作用域
     * 函数上下文环境==>对应的函数使用域
  */
+for (var i = 0; i < 5; i++) {
+    console.log(i);
+}
+console.log(i);
+console.log('----------------------------------------------');
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+console.log(i);

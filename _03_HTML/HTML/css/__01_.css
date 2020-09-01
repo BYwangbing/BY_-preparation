@@ -1,0 +1,17 @@
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+* For IE 6/7 only
+*/
+.clearfix {
+    *zoom: 1;
+}
+
+/*text-align: justify;*/

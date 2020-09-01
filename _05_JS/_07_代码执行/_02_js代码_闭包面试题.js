@@ -48,7 +48,7 @@ function getFunctionName(fun) {
 // 采用这种方法创建的函数为匿名函数，即没有函数name
 /*var fn2 = function () {
 };
-console.log(getFunctionName(fn2).length)*/;
+console.log(getFunctionName(fn2).length)*/
 // 3、创建具名函数表达式  注意：具名函数表达式的函数名只能在创建函数内部使用
 /*var fn3 = function express() {
     console.log("in: fn3 <", typeof fn3, "> express: <", typeof express, ">");

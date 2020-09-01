@@ -15,11 +15,13 @@
 ## HTTP加密流程
 + HTTPS是通过SSL(安全套接层)和TLS(安全传输协议)的组合使用，加密TCP载荷即HTTP报文内容，
 + 同时通过不对称密钥方式认证身份，保证传输的安全可靠
-+ 即： HTTP+加密+认证+完整性保护=HTTPS
++ 即： HTTP + 加密 + 认证 + 完整性保护 = HTTPS
+
 
 + 原本HTTP先和TCP（假定传输层是TCP协议）直接通信，
 + 而加了SSL后，就变成HTTP先和SSL通信，再由SSL和TCP通信，
 + 相当于SSL被嵌在了HTTP和TCP之间
++ HTTPS 是身披 SSL 外壳的 HTTP
 
 ### 共享密钥加密 （对称密钥加密） 
 采用的是使用相同密钥对报文进行加密解密
@@ -35,7 +37,9 @@
 + https缓存不如http高效，会增加数据开销。
 + SSL证书也需要钱，功能越强大的证书费用越高。
 + SSL证书需要绑定IP
-
++ 网络负载会变慢 消耗服务器和客户端的硬件资源，导致负载增强
++ 加密通信会消耗更多的 CPU 及内存资源
+ 
 ## HTTP教程：
 https://www.runoob.com/http/http-tutorial.html
 + HTTP 简介
