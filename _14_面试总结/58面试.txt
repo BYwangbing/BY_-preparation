@@ -1,0 +1,26 @@
+一面（20分钟）：
+1. 你知道哪些HTML标签
+2. css 有哪些单位
+中间应该有问js知识点
+3. vue 双向数据绑定
+4. 组件通信
+5. 路由两种方式 最常用的是哪种
+7. 深浅拷贝
+6. 七层模型 各层作用
+8. Node了解不 webpack了解不
+9. 问了工作室 学习模式
+二面（20分钟）：
+1、Es6声明函数的方式（只Es6)
+2、普通函数箭头函数区别 var let const 区别
+3、Object.create()、Object.definePrototype() hasOwnProperty() 等含义
+4. string原型
+5. 继承 原型
+5. Set 和 Array 区别
+5. post请求步骤
+6. vue路由配置 服务端配置 hash history get post请求
+7. 组件通信 Vue响应式原理 Vuex
+8. Promise
+9. ajax
+10. 看着简历在问 所以说了Websocket 项目
+ 
+防抖节流
