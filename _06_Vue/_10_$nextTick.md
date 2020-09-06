@@ -1,21 +1,12 @@
-JS中有两种任务类型：
-+ 微任务（microtask）和宏任务（macrotask）
-+ 在ES6中，microtask称为 jobs，macrotask称为 task。
-
-+ 宏任务： script （主代码块）、setTimeout 、setInterval 、setImmediate 、I/O 、UI rendering
-+ 微任务：process.nextTick（Nodejs） 、promise 、Object.observe 、MutationObserver
-
-+ process.nextTick 优先级永远大于 promise.then
-+ MessageChannel属于宏任务，优先级是：MessageChannel->setTimeout
-<hr />
-
 ### 全面解析Vue.nextTick实现原理
 官方文档的解释：
 + 可以在DOM更新完毕之后执行一个回调
 + 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
 <hr />
+
 **nextTick 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用nextTick，则可以在回调中获取更新后的 DOM**
 <hr />
+
 异步说明：（Vue 是异步执行 DOM 更新）
 + Vue 实现响应式并不是数据发生变化之后 DOM 立即变化，而是按一定的策略进行 DOM 的更新。
 + Vue在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。
@@ -35,3 +26,8 @@ MutationObserver是HTML5新增的属性，用于监听DOM修改事件，能够�
 + 在Vue生命周期的created()钩子函数进行DOM操作一定要放到Vue.nextTick()的回调函数中。
 
 + 在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的DOM结构的时候，这个操作都应该放进Vue.nextTick()的回调函数中。
+
+
++ `Vue.nextTick(callback)`，当数据发生变化，更新后执行回调。
++ `Vue.$nextTick(callback)`，当dom发生变化，更新后执行的回调。
+

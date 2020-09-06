@@ -15,6 +15,18 @@
 
 &emsp;&emsp;同步代码执行 -> 查找异步队列，推入执行栈，执行callback1[事件循环1] ->查找异步队列，推入执行栈，执行callback2[事件循环2]...
 
+
+JS中有两种任务类型：
++ 微任务（microtask）和宏任务（macrotask）
++ 在ES6中，microtask称为 jobs，macrotask称为 task。
+
++ 宏任务： script （主代码块）、setTimeout 、setInterval 、setImmediate 、I/O 、UI rendering
++ 微任务：process.nextTick（Nodejs） 、promise 、Object.observe 、MutationObserver
+
++ process.nextTick 优先级永远大于 promise.then
++ MessageChannel属于宏任务，优先级是：MessageChannel->setTimeout
+<hr />
+
 ## setInterval运行机制
 + setInterval具有累积效应 可以执行多次 直到clearInterval把它清除 使用 `setInterval()` 创建的定时器可以使代码循环执行
 + 会每隔指定的时间将注册的函数置入Event Queue，如果前面的任务耗时太久，那么同样需要等待

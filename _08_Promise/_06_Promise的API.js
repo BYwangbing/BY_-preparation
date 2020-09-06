@@ -19,7 +19,7 @@
     说明: 返回一个失败的 promise 对象
 6. Promise.all 方法: (promises) => {}
     (1) promises: 包含 n 个 promise 的数组
-    说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功, 只要有一个失败了就直接失败
+    说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功, 只要有一个失败了就直接失败 第一个被 Rejected 的实例
 7. Promise.race 方法: (promises) => {}
     (1) promises: 包含 n 个 promise 的数组
     说明: 返回一个新的 promise, 第一个完成的 promise 的结果状态就是最终的结果状态
