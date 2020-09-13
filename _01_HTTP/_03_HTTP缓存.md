@@ -12,7 +12,7 @@
     + 并且Size显示from disk cache或from memory cache 浏览器读取缓存的顺序为memory > disk
     + `Cache-Control`的优先级比`Expires`高
 2. **协商缓存**：向服务器发送请求，服务器会根据这个请求的request header的一些参数来判断是否命中协商缓存，如果命中，则返回304状态码并带上新的response header通知浏览器从缓存中读取资源；
-    +` Last-Modified / If-Modified-Since` 和 `Etag / If-None-Match`
+    + `Last-Modified / If-Modified-Since` 和 `Etag / If-None-Match`
     + `Etag / If-None-Match`的优先级比L`ast-Modified / If-Modified-Since`高
     + 同时存在则只有Etag / If-None-Match生效
 3. 两者的共同点是都是从客户端缓存中读取资源；区别是强缓存不会发请求，协商缓存会发请求。

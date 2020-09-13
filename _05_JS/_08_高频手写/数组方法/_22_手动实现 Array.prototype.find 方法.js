@@ -10,9 +10,9 @@ Array.prototype._find = function (findCallback, thisValue) {
         return [];
     }
     let arr = thisValue || this;
-    for (let i=0; i<this.length; i++){
+    for (let i = 0; i < this.length; i++) {
         let result = findCallback.call(this, this[i], i, arr);
-        if (result){
+        if (result) {
             return this[i];
         }
     }

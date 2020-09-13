@@ -1,6 +1,6 @@
 function MoreThanHalfNum_Solution(numbers) {
     if (numbers.length === 0) {
-        return 0;
+        return;
     }
     let arr = [], length = numbers.length;
     for (let i = 0; i < length; i++) {
@@ -15,7 +15,7 @@ function MoreThanHalfNum_Solution(numbers) {
             return numbers[i]
         }
     }
-    return 0;
+    return;
 }
 
 let arr = [1, 2, 3, 2, 2, 2, 5, 4, 2];

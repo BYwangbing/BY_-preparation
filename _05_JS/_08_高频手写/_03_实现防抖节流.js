@@ -1,6 +1,7 @@
 /*
     节流: throttle
     防抖：debounce
+    // https://segmentfault.com/a/1190000018445196
 */
 
 // 实现防抖函数（debounce） 思路; 在规定时间内未触发第二次，则执行

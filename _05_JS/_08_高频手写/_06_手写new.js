@@ -1,6 +1,6 @@
 function _new(Fn, ...args) {
     // 创建一个空对象， 让它的原型链指向Fn.prototype
-    // let  obj = {};
+    // let obj = {};
     // obj.__proto__ = Fn.prototype;
     let obj = Object.create(Fn.prototype);
     // 只改this指向并且把参数传递过去,call和apply都可以
