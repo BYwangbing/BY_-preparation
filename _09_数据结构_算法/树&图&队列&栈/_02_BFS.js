@@ -4,7 +4,7 @@ function Node(key) {
     this.key = key //当前节点序号
 }
 
-// 数据结构： 队列，先入先出
+// 数据结构： 队列，先入先出 push shift
 function breadthFirstSearch(node) {
     let nodeList = [];
     if (node !== null) {

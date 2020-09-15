@@ -1,3 +1,4 @@
+// https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
 /**
  * @param {string} s
  * @return {string[]}
@@ -20,5 +21,5 @@ var permutation = function (s) {
     }
     return [...new Set(result)];
 };
-let s = "abc";
+let s = "Mate";
 console.log(permutation(s));

@@ -5,11 +5,3 @@ function jumpFloor(number) {
     }
     return dp[number - 1]
 }
-
-function jumpFloorII(number) {
-    // write code here
-    if (number === 1) {
-        return 1
-    }
-    return jumpFloorII(number - 1) * 2
-}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a" style="height: 200px; background-color: #F4374D">
+    <div id="b" style="height: 30px; background-color: #5f55af"></div>
+</div>
+</body>
+<script>
+    document.getElementById('a').addEventListener('click', e => {
+        console.log('a')
+    });
+
+    document.getElementById('b').addEventListener('click', e => {
+        e.preventDefault();
+        console.log("b");
+    });
+
+    const user = {
+        name: 'fe',
+        age: 28,
+        company: {
+            department: 'ABG-FE'
+        }
+    };
+    const {company: {department = 'ABG-RD'}} = user;
+    console.log(department);
+
+</script>
+</html>

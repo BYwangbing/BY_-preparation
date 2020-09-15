@@ -1,4 +1,4 @@
-/*setTimeout实现*/
+/*/!*setTimeout实现*!/
 function changeColor(color) {
     console.log('traffic-light ', color);
 }
@@ -14,7 +14,7 @@ function main() {
     }, 2000)
 }
 
-main();
+main();*/
 
 /*async await 实现*/
 function sleep(duration) {
@@ -27,7 +27,7 @@ async function $changeColor(color, duration) {
 }
 
 async function $main() {
-    while (true) {
+    while (1) {
         await $changeColor('red', 3000);
         await $changeColor('green', 1000);
         await $changeColor('yellow', 2000);
