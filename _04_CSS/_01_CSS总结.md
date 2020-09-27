@@ -268,3 +268,11 @@ background-attachment 属性必须设置为 "fixed"
 + 继 承：会被子元素继承,且，子元素并不能通过 opacity: 1 来取消隐藏；
 + transition：opacity 可以延时显示和隐藏
 
+## Sass和Less的区别
++ 变量符不一样，less是@，而Scss是$，而且变量的作用域也不一样
++ 输出设置，Less没有输出设置，Sass提供4中输出选项：nested, compact, compressed 和 expanded。
++ Sass支持条件语句，可以使用if{}else{},for{}循环等等。而Less不支持。
++ Sass是基于Ruby的，是在服务端处理的，
++ 而Less是需要引入less.js来处理Less代码输出css到浏览器，
++ 也可以在开发环节使用Less，然后编译成Css文件，直接放到项目中，
++ 也有`Less.app`、`SimpleLess`、`CodeKit.app`这样的工具，也有在线编译地址。

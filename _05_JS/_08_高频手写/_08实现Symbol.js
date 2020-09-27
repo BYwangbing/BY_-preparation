@@ -77,6 +77,7 @@ console.log(y[mySymbol]); // "Hello!"*/
 //  10. Symbol 作为属性名，该属性不会出现在 for...in、for...of 循环中，
 // 也不会被 Object.keys()、Object.getOwnPropertyNames()、JSON.stringify() 返回。
 // 它未被包含在对象自身的属性名集合(property names)之中
+// 利用该特性,我们可以把一些不需要对外操作和访问的属性使用Symbol来定义
 // 但是，它也不是私有属性，有一个 Object.getOwnPropertySymbols 方法，
 // 可以获取指定对象的所有 Symbol 属性名
 
@@ -114,8 +115,12 @@ console.log(Symbol.keyFor(s2) ); // undefined
 symbol的应用场景:
 场景一：使用Symbol来作为对象属性名(key)
 作为对象属性 当一个复杂对象中含有多个属性的时候，很容易将某个属性名覆盖掉，
-利用 Symbol 值作为属性名可以很好的避免这一现象
+利用 Symbol 值作为属性名可以很好的避免这一现象 防止属性名称冲突
 场景二：使用Symbol来替代常量
 
-
+应用场景 1-使用Symbol来作为对象属性名(key) 防止属性名称冲突
+应用场景 2-使用 Symbol 定义类的私有属性/方法
+应用场景 3-模块化机制 达到私有化的效果
+应用场景 4-使用Symbol来替代常量
+应用场景 5-注册和获取全局的`Symbol`
 */

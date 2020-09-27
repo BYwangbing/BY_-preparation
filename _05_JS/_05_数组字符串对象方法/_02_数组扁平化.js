@@ -43,3 +43,11 @@ function $flatt(array) {
 function $flat(array) {
     return array.toString().split(',').map(item => parseInt(item))
 }
+
+const array = [1, [2], [3, [4], [5, [6]]], [[[[7]]]]];
+console.log($flat(array));
+
+
+var $arr = [1, [2, [3, 4]]];
+/*这种方法只可以扁平一层*/
+console.log([].concat(...$arr)); // [1, 2, [3, 4]]

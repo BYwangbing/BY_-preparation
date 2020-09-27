@@ -1,3 +1,6 @@
+> https://www.cnblogs.com/lovesong/p/5021992.html
+
+HTML5离线缓存又名Application Cache，是从浏览器的缓存中分出来的一块缓存区，要想在这个缓存中保存数据，可以使用一个描述文件（manifest file），列出要下载和缓存的资源。
 
 ## 应用程序缓存
 应用程序缓存是 HTML5  的重要特性之一，提供了离线使用的功能，让应用程序可以获取本地的网站内容，例如 HTML 、 CSS 、图片以及 JavaScript 。这个特性可以提高网站性能，它的实现借助于 `manifest` 文件，如下：
