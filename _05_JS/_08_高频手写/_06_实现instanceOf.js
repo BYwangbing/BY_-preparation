@@ -6,7 +6,7 @@ function instance_of(A, B) {
     A = A.__proto__;// 取 A 的隐式原型
     // A的  __proto__  是不是强等于 B.prototype，不等于再找  A.__proto__ .__proto__  直到 __proto__ 为 null
     while (true) {
-        if (A === null) return false;
+        if (A === null || A === undefined) return false;
         if (R === A) return true;
         A = A.__proto__;
     }

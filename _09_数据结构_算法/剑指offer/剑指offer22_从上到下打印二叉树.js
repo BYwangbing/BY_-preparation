@@ -12,7 +12,7 @@ function PrintFromTopToBottom(root) {
     // write code here
     if (root === null) return [];
     let res = [];
-    let queue = [root];
+    let queue = [root]; 
     while (queue.length) {
         // 如果队列不为空，取出队列首的一个节点，进行打印
         let cur = queue.shift();
