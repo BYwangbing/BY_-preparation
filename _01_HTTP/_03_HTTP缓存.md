@@ -66,4 +66,20 @@
 + 便于计算，不会特别耗 CPU。这样子 hash 不是特别合适
 + 便于横向扩展，多个 node 上生成的 etag 值一致。这样子 inode 就排除了
 
-nginx 中 etag 由响应头的 Last-Modified 与 Content-Length 表示为十六进制组合而成。
+nginx 中 etag 由响应头的 `Last-Modified` 与 `Content-Length` 表示为十六进制组合而成。
+```js
+etag = '{:x}-{:x}'.format(header.last_modified, header.content_lenth)
+```
+
+```js
+new Date(parseInt('5cbee66d', 16) * 1000).toJSON();
+"2019-04-23T10:18:21.000Z";
+
+parseInt('264', 16);
+612
+```
+
+### 如果 http 响应头中 ETag 值改变了，是否意味着文件内容一定已经更改
++ 不一定，由服务器中 ETag 的生成算法决定。
++ 比如 nginx 中的 etag 由 last_modified 与 content_length 组成，而 last_modified 又由 mtime 组成
++ 当编辑文件却未更改文件内容时，或者 touch file，mtime 也会改变，此时 etag 改变，但是文件内容没有更改。

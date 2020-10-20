@@ -10,7 +10,7 @@
 <!-- 网页地址 -->
 <meta name="website" content="https://sanyuan0704.github.io/frontend_daily_question/"/>
 <!-- 网页版权信息 -->
- <meta name="copyright" content="2018-2019 demo.com"/>
+<meta name="copyright" content="2018-2019 demo.com"/>
 <!-- 网页关键字, 用于SEO -->
 <meta name="keywords" content="meta,html"/>
 <!-- 网页描述 -->
@@ -28,6 +28,12 @@
   maximum-scale：允许用户缩放到的最大比例
   user-scalable：用户是否可以手动缩 (no,yes)
  -->
+<!--忽略将数字变为电话号码-->
+<meta content="telephone=no" name="format-detection">
+<!--IOS中Safari允许全屏浏览-->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<!--忽略识别邮箱-->
+<meta name="format-detection" content="email=no" />
 ```
 ### http-equiv属性
 ```html

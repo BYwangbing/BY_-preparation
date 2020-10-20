@@ -56,8 +56,50 @@ Function.prototype._bind = function (thisArg) {
     };
     // Person的原型对象复制给bili的原型对象
     fnNOP.prototype = _self.prototype;
-    newFnBound.prototype = new fnNOP;
+    newFnBound.prototype = new fnNOP();
     return newFnBound()
 };
 /*let bibi = Person._bind(egg, '瑞娜', '静晓', '老大', '胡爷爷')("BY");
 let b = new bibi('胡星星');*/
+
+// 第一版 返回函数的模拟实现
+Function.prototype.$bindI = function (thisArg) {
+    let self = this;
+    return function () {
+        self.apply(thisArg)
+    }
+};
+
+//第二版 传参的模拟实现
+Function.prototype.$bindII = function (thisArg) {
+    let self = this;
+    // 获取$bindII函数从第二个参数到最后一个参数
+    let args = Array.prototype.slice.call(arguments, 1);
+    return function () {
+        // 这个时候的arguments是指bind返回的函数传入的参数
+        let bindArgs = Array.prototype.slice.call(arguments);
+        self.apply(thisArg, args.concat(bindArgs))
+    }
+};
+
+//第三版 构造函数效果的模拟实现
+Function.prototype.$bindIII = function (thisArg) {
+    if (typeof this !== "function") {
+        throw new Error("Function.prototype.bind - what is trying to be bound is not callable");
+    }
+    let self = this;
+    // 获取$bindIII函数从第二个参数到最后一个参数
+    let args = Array.prototype.slice.call(arguments, 1);
+    let fNOP = function () {
+    };
+    let fBound = function () {
+        let bindArgs = Array.prototype.slice.call(arguments);
+        // 当作为构造函数时，this 指向实例，self 指向绑定函数，因为下面一句 `fbound.prototype = this.prototype;`，已经修改了 fbound.prototype 为 绑定函数的 prototype，此时结果为 true，当结果为 true 的时候，this 指向实例。
+        // 当作为普通函数时，this 指向 window，self 指向绑定函数，此时结果为 false，当结果为 false 的时候，this 指向绑定的 context。
+        self.apply(this instanceof self ? this : thisArg, bindArgs.concat(args))
+    };
+    // 修改返回函数的 prototype 为绑定函数的 prototype，实例就可以继承函数的原型中的值
+    fNOP.prototype = this.prototype;
+    fBound.prototype = new fNOP();
+    return fBound()
+};

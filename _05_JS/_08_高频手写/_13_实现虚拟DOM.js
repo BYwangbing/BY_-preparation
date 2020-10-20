@@ -5,8 +5,8 @@
 */
 function VirtualDOM(type, props, children) {
     this.type = type;
-    this.props = props;
-    this.children = children;
+    this.props = props || {};
+    this.children = children || [];
 }
 
 /*

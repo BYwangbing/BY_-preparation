@@ -49,6 +49,18 @@ function _add() {
     return _adder;
 }
 
+const currying = () => {
+    // let _args = Array.prototype.slice.call(arguments);
+    let _args = [...arguments];
+    let _adder = () => {
+        _args.push(...arguments);
+        return _adder
+    };
+    _adder.toString = () => {
+        _args.reduce(((previousValue, currentValue) => previousValue + currentValue))
+    };
+    return _adder
+};
 /*var out = 25,
     inner = {
         out: 20,
