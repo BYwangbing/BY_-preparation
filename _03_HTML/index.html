@@ -21,7 +21,18 @@
     </style>
 </head>
 <body>
+
+
+输入你的名字: <label for="flame"></label><input type="text" id="flame" onchange="myFunction()">
+<p>当光标离开输入框后，函数将被触发，将小写字母转为大写字母。</p>
+
 <div class="classA classB">123</div>
 <img class="desaturate" src="http://fdfs.xmcdn.com/group80/M06/A1/BF/wKgPEV6n1SmyQiIoAA4i4C9acEw42.jpeg" alt="">
 </body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
 </html>

@@ -1,6 +1,6 @@
 /*——统计数组中相同项的个数——*/
 let cars = ['BMW', 'Benz', 'Benz', 'Tesla', 'BMW', 'Toyota'];
-let carsObj = cars.reduce(function (obj, name) {
+let carsObj = cars.reduce((obj, name) => {
     obj[name] = obj[name] ? ++obj[name] : 1;
     return obj;
 }, {});

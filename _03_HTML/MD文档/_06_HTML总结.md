@@ -66,3 +66,23 @@ https://blog.csdn.net/qq_42098849/article/details/104730475
 ```
 ## <h1>-<h6>标签怎么合理使用
 + 一个页面建议只用一个H1
+
+## z-index失效
+### 失效的情况:
++ 1、父标签 position属性为relative；
++ 2、问题标签无position属性（不包括static）；
++ 3、问题标签含有浮动(float)属性。
++ 4、问题标签的祖先标签的z-index值比较小
+### 解决方法:
++ 第一种:position:relative改为position:absolute；
++ 第二种:浮动元素添加position属性（如relative，absolute等）；
++ 第三种:去除浮动。
++ 第四种:提高父标签的z-index值
+## input事件自动获取焦点
+只要在该input标签后添加`autofocus="autofocus"`即可
+```html
+<input type="text" id="box" autofocus="autofocus">
+```
++ input输入框的onchange事件，要在 input 失去焦点的时候才会触发；
++ 在输入框内容变化的时候不会触发change，当鼠标在其他地方点一下才会触发；
++ onchange 事件也可用于单选框与复选框改变后触发的事件。

@@ -247,7 +247,7 @@ background-attachment 属性必须设置为 "fixed"
 + Bootstrap响应式布局是利用其栅格系统，对于不同的屏幕采用不同的类属性
 + 通过定义容器大小,平分12份(最多)再调整内外边距，最后结合媒体查询，就制作出了强大的响应式网格系统
 
-## display:none visibility:hidden opacity:0 区别
+## `display:none` `visibility:hidden` `opacity:0` 区别
 ### display: none;
 + DOM 结构：浏览器不会渲染 display 属性为 none 的元素，不占据空间；
 + 事件监听：无法进行 DOM 事件监听；
@@ -276,3 +276,14 @@ background-attachment 属性必须设置为 "fixed"
 + 而Less是需要引入less.js来处理Less代码输出css到浏览器，
 + 也可以在开发环节使用Less，然后编译成Css文件，直接放到项目中，
 + 也有`Less.app`、`SimpleLess`、`CodeKit.app`这样的工具，也有在线编译地址。
+
+## 动画实现方式 ？一段流畅的动画帧与帧之间间隔有什么要求？
++ html5动画，js动画，CSS3动画
++ 多数情况下最高的绘制频率只能是每秒60帧
++ 对应于显示器的60Hz
+    + 低于这个频率，肉眼感觉画面卡顿不流畅
+    + 高于这个频率，及其耗费性能
++ 通常采用的时间间隔就是1/60,也就是16.7ms
+
+
+
