@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-<!--&lt;!&ndash;<div class="wrapper1">-->
-<!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
-<!--    <aside class="left">Left</aside>-->
-<!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
-<!--    <section class="right">Right</section>-->
-<!--</div>-->
-<!--<div class="wrapper2">-->
-<!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
-<!--    <aside class="left">Left</aside>-->
-<!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
-<!--    <section class="right">Right</section>-->
-<!--</div>-->
-<!--<div class="wrapper3">-->
-<!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
-<!--    <aside class="left">Left</aside>-->
-<!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
-<!--    <section class="right">Right</section>-->
-<!--</div>&ndash;&gt;-->
-<div class="wrapper4">
-    <!-- 左边定宽 -->
-    <aside class="left">Left</aside>
-    <!-- 右边自适应 -->
-    <section class="right">Right</section>
-</div>
-<div>
-    <section>
-        方法一：双inline-block 右： width: calc(100% - 200px);<br>
-        方法二：双float 右： width: calc(100% - 200px);<br>
-        方法三： float+margin-left 右： margin-left: 200px;<br>
-        方法四：absolute+margin-left 右： margin-left: 200px;<br>
-        方法五：float+BFC 右： margin-left: 0; overflow: auto;<br>
-        方法六：flex布局 右： flex: 1;<br>
-        方法一：左边设置左浮动，右边宽度设置100%<br>
-        方法二： 父容器设置 display：flex；Right部分设置 flex：1<br>
-        方法三：设置浮动 + 在 css 中使用 calc() 函数 width: calc(100% - 200px)<br>
-    </section>
-</div>
-</body>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    {% comment %} https://www.cnblogs.com/wx1993/p/6727653.html {% endcomment %}
+    <!--&lt;!&ndash;<div class="wrapper1">-->
+    <!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
+    <!--    <aside class="left">Left</aside>-->
+    <!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
+    <!--    <section class="right">Right</section>-->
+    <!--</div>-->
+    <!--<div class="wrapper2">-->
+    <!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
+    <!--    <aside class="left">Left</aside>-->
+    <!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
+    <!--    <section class="right">Right</section>-->
+    <!--</div>-->
+    <!--<div class="wrapper3">-->
+    <!--    &lt;!&ndash; 左边定宽 &ndash;&gt;-->
+    <!--    <aside class="left">Left</aside>-->
+    <!--    &lt;!&ndash; 右边自适应 &ndash;&gt;-->
+    <!--    <section class="right">Right</section>-->
+    <!--</div>&ndash;&gt;-->
+    <div class="wrapper4">
+      <!-- 左边定宽 -->
+      <aside class="left">Left</aside>
+      <!-- 右边自适应 -->
+      <section class="right">Right</section>
+    </div>
+    <div>
+      <section>
+        方法一：双inline-block 右： width: calc(100% - 200px);<br />
+        方法二：双float 右： width: calc(100% - 200px);<br />
+        方法三： float+margin-left 右： margin-left: 200px;<br />
+        方法四：absolute+margin-left 右： margin-left: 200px;<br />
+        方法五：float+BFC 右： margin-left: 0; overflow: auto;<br />
+        方法六：flex布局 右： flex: 1;<br />
+        方法一：左边设置左浮动，右边宽度设置100%<br />
+        方法二： 父容器设置 display：flex；Right部分设置 flex：1<br />
+        方法三：设置浮动 + 在 css 中使用 calc() 函数 width: calc(100% -
+        200px)<br />
+      </section>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            margin-top: 100px;
+        }
+
+        .content:before {
+            content: 'target-before';
+            color: #33B5E5;
+            position: relative;
+            top: -10px;
+        }
+
+        .content:after {
+            content: 'target-after';
+            color: #33B5E5;
+            position: relative;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button style="width:50px;height:25px;background-color:#f00;color:#fff;" οnclick="changeColor('#f00');">red</button>
+    <button style="width:50px;height:25px;background-color:#0f0;color:#fff;"
+        οnclick="changeColor('#0f0');">green</button>
+    <button style="width:50px;height:25px;background-color:#00f;color:#fff;"
+        οnclick="changeColor('#00f');">blue</button>
+
+    <div class="content">
+        I am a programmer.
+    </div>
+</body>
+
+</html>

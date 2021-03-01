@@ -1,33 +1,32 @@
 * {
-    padding: 0;
-    margin: 0;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 aside {
-    width: 200px;
-    height: 200px;
-    padding-top: 75px;
-    background: #5A6A94;
+  width: 200px;
+  height: 200px;
+  background: #5a6a94;
 }
 
 section {
-    min-height: 200px;
-    background: #BE4F4F;
-    line-height: 32px;
+  min-height: 200px;
+  background: #be4f4f;
+  line-height: 32px;
 }
-div{
-    margin: 20px 0;
+div {
+  margin: 20px 0;
 }
-.wrapper1 .left{
-    float: left;
+.wrapper1 .left {
+  float: left;
 }
-.wrapper1 .right{
-    width: 100%;
+.wrapper1 .right {
+  width: 100%;
 }
 /*.wrapper2 {
     display: flex;
@@ -58,12 +57,12 @@ div{
     margin-left: 0;
     overflow: auto;
 }*/
-.wrapper4{
-    position: relative;
+.wrapper4 {
+  position: relative;
 }
-.left{
-    position: absolute;
+.left {
+  position: absolute;
 }
-.right{
-    margin-left: 200px;
+.right {
+  margin-left: 200px;
 }

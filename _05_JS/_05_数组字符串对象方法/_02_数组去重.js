@@ -128,3 +128,17 @@ function unique_8(arr) {
 
 let arr8 = [1, 1, 'true', 'true', true, true, 15, 15, false, false, undefined, undefined, null, null, NaN, NaN, 'NaN', 0, 0, 'a', 'a', {}, {}];
 console.log(unique_8(arr8));
+
+function fn(arr) {
+    return arr.filter((item, index, arr) => arr.indexOf(item) === index)
+}
+
+function _fn(arr) {
+    let obj = {};
+    arr.forEach((item) => {
+        obj[item] = '';
+    })
+
+    return Object.keys(obj)
+}
+console.log(_fn(arr8));

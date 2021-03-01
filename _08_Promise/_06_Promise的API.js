@@ -20,6 +20,8 @@
 6. Promise.all 方法: (promises) => {}
     (1) promises: 包含 n 个 promise 的数组
     说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功, 只要有一个失败了就直接失败 第一个被 Rejected 的实例
+    成功和失败的返回值是不同的，成功的时候返回的是一个结果数组，而失败的时候则返回最先被reject失败状态的值
+    Promise.all获得的成功结果的数组里面的数据顺序和Promise.all接收到的数组顺序是一致的
 7. Promise.race 方法: (promises) => {}
     (1) promises: 包含 n 个 promise 的数组
     说明: 返回一个新的 promise, 第一个完成的 promise 的结果状态就是最终的结果状态

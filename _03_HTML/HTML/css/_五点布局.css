@@ -1,0 +1,106 @@
+.box1 {
+  background: rgb(64, 233, 21);
+  display: flex; /*为父元素添加flex后，span.item自动转换为block元素*/
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.item {
+  background: #ff0015;
+  width: 100px;
+  height: 100px;
+  border: 1px solid orange;
+}
+
+.box2 {
+  display: flex; /*1*/
+  justify-content: center; /*2*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box3 {
+  display: flex; /*1*/
+  justify-content: flex-end; /*2*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box4 {
+  display: flex; /*1*/
+  justify-content: center; /*2*/
+  align-items: center; /*3*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box5 {
+  display: flex; /*1*/
+  justify-content: flex-end; /*2*/
+  align-items: center; /*3*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box6 {
+  display: flex; /*1*/
+  justify-content: flex-start; /*2*/
+  align-items: flex-end; /*3*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box7 {
+  display: flex; /*1*/
+  justify-content: center; /*2*/
+  align-items: flex-end; /*3*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box8 {
+  display: flex; /*1*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+.box9 {
+  display: flex; /*1*/
+  justify-content: space-around; /*2*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.box10 {
+  display: flex; /*1*/
+  justify-content: space-between; /*2*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+/* flex-direction: column；即让justify-content控制纵向，让align-items控制横向。 */
+.box11 {
+  display: flex; /*1*/
+  flex-direction: column; /*2*/
+  justify-content: space-between; /*3*/
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
