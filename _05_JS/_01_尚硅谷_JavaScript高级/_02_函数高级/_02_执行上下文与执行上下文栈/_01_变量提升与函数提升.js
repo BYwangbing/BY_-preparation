@@ -35,7 +35,6 @@ function a() {
 a();
 console.log(a);*/
 
-
 /*console.log(bar);  // f bar() { console.log(123) }
 console.log(bar()); // undefined
 var bar = 456;
@@ -63,9 +62,9 @@ var person = 'jack';
 console.log(person);
 
 function fun() {
-    console.log(person);
-    var person = 'tom';
-    console.log(person)
+  console.log(person);
+  var person = 'tom';
+  console.log(person);
 }
 
 console.log(person);

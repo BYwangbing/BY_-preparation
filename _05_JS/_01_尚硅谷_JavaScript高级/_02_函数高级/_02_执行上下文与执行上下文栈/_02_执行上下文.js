@@ -88,12 +88,9 @@ function f(a1) {
 
 }
 
-f(2, 3)*/;
-
-/*console.log([1, 2] instanceof Array);
+f(2, 3)*/ /*console.log([1, 2] instanceof Array);
 console.log(Array.isArray([1, 2, 3]));
 Array.prototype.isPrototypeOf([1, 2]); //true表示是数组，false不是数组*/
-
 
 /*
 let foo = function () {
@@ -105,10 +102,10 @@ foo = function () {
 };
 foo(); // foo2*/
 function foo() {
-    console.log('foo1');
+  console.log('foo1');
 }
-foo();  // foo2
+foo(); // foo2
 function foo() {
-    console.log('foo2');
+  console.log('foo2');
 }
 foo(); // foo2
