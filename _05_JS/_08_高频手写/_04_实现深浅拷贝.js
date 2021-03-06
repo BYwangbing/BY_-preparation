@@ -1,11 +1,11 @@
 function shallowCopy(obj) {
-    let data = {};
-    for (let prop in obj) {
-        if (obj.hasOwnProperty(obj[prop])) {
-            data[prop] = obj[prop]
-        }
+  let data = {};
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(obj[prop])) {
+      data[prop] = obj[prop];
     }
-    return data;
+  }
+  return data;
 }
 
 // 展开运算符： ...obj
@@ -15,17 +15,17 @@ function shallowCopy(obj) {
 
 /*浅拷贝+递归*/
 function _deepCopy(source) {
-    let target = {};
-    for (let prop in source) {
-        if (source.hasOwnProperty(source[prop])) {
-            if (typeof source[prop] === 'object') {
-                target[prop] = _deepCopy(source[prop])
-            } else {
-                target[prop] = source[prop]
-            }
-        }
+  let target = {};
+  for (let prop in source) {
+    if (source.hasOwnProperty(source[prop])) {
+      if (typeof source[prop] === 'object') {
+        target[prop] = _deepCopy(source[prop]);
+      } else {
+        target[prop] = source[prop];
+      }
     }
-    return target;
+  }
+  return target;
 }
 
 /*
@@ -37,29 +37,33 @@ function _deepCopy(source) {
 
 // 定义检测数据类型的功能函数
 function checkType(target) {
-    return Object.prototype.toString.call(target).slice(8, -1);
+  return Object.prototype.toString.call(target).slice(8, -1);
 }
 
 function deepClone(source) {
-    // 判断拷贝的数据类型
-    let result, target = checkType(source);
-    // 初始化变量 result 成为最终数据
-    if (target === 'Object') {
-        result = {};
-    } else if (target === 'Array') {
-        result = [];
+  // 判断拷贝的数据类型
+  let result,
+    target = checkType(source);
+  // 初始化变量 result 成为最终数据
+  if (target === 'Object') {
+    result = {};
+  } else if (target === 'Array') {
+    result = [];
+  } else {
+    return result;
+  }
+  // 遍历目标数据
+  for (let prop in source) {
+    if (
+      checkType(source[prop]) === 'Object' ||
+      checkType(source[prop]) === 'Array'
+    ) {
+      result[prop] = deepClone(source[prop]);
     } else {
-        return result;
+      result[prop] = source[prop];
     }
-    // 遍历目标数据
-    for (let prop in source) {
-        if (checkType(source[prop]) === 'Object' || checkType(source[prop]) === 'Array') {
-            result[prop] = deepClone(source[prop])
-        } else {
-            result[prop] = source[prop];
-        }
-    }
-    return result
+  }
+  return result;
 }
 /*
     JSON.stringify()：将对象转成 JSON 字符串

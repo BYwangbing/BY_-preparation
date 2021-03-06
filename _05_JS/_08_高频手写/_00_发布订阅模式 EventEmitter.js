@@ -39,16 +39,3 @@ class EventEmitter {
     this.on(eventName, fn);
   }
 }
-
-console.log(person);
-console.log(fun);
-var person = 'jack';
-console.log(person);
-
-function fun() {
-  console.log(person);
-  var person = 'tom';
-  console.log(person);
-}
-fun();
-console.log(person);

@@ -1,4 +1,10 @@
 /*
+防抖(debounce)：触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间
+节流(thorttle)：高频事件触发，但在 n 秒内只会执行一次，所以节流会稀释函数的执行频率
+区别：防抖动是将多次执行变为最后一次执行，节流是将多次执行变成每隔一段时间执行。
+*/
+
+/*
     节流: throttle
     防抖：debounce
     // https://segmentfault.com/a/1190000018445196
@@ -7,7 +13,7 @@
 // 实现防抖函数（debounce） 思路; 在规定时间内未触发第二次，则执行
 // 仅仅只会调用一次！！！！！！！！！！
 function debounce(func, wait) {
-  let timer = null;
+  let timer = null; // 创建一个用来存放定时器的返回值
   return () => {
     let _this = this;
     let args = arguments;

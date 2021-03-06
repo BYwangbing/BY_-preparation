@@ -5,27 +5,27 @@ https://www.nowcoder.com/practice/fe6b651b66ae47d7acce78ffdd9a96c7?tpId=13&&tqId
 * 输入一个字符串,长度不超过9(可能有字符重复),字符只包括大小写字母。
 * */
 function Permutation(str) {
-    let result = [];
-    if (str.length <= 1) {
-        return str;
-    }
-    str = str.split('').sort().join('');
-    strArrange(result, '', str);
-    return result;
+  let result = [];
+  if (str.length <= 1) {
+    return str;
+  }
+  str = str.split('').sort().join('');
+  strArrange(result, '', str);
+  return result;
 }
 
 function strArrange(result, done, str) {
-    if (str.length === 0) {
-        result.push(done);
+  if (str.length === 0) {
+    result.push(done);
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (i > 0 && str[i] === str[i - 1]) {
+      continue;
     }
-    for (let i = 0; i < str.length; i++) {
-        if (i > 0 && str[i] === str[i - 1]) {
-            continue;
-        }
-        let left = str.slice(0, i);
-        let right = str.slice(i + 1);
-        strArrange(result, done + str[i], left + right);
-    }
+    let left = str.slice(0, i);
+    let right = str.slice(i + 1);
+    strArrange(result, done + str[i], left + right);
+  }
 }
 
 console.log(Permutation('wfk'));

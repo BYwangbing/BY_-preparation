@@ -389,3 +389,5 @@ background-attachment 属性必须设置为 "fixed"
 /* html */
 <div class="line"></div>
 ```
+
+在 padding 和 margin 设置为百分比的时候，不管是 top/left/right/bottom ,这个百分比都是相对于父元素的宽度来取值的

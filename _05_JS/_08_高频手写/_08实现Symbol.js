@@ -136,15 +136,15 @@ symbol的应用场景:
 };*/
 
 // 输入[1,3,1,3,2]，输出数组中唯一一个只存在一项的值，比如如上就是 2
-const one = arr => {
-    let result = 0;
-    for (let i = 0; i < arr.length; i++) {
-        result = result ^ arr[i];
-    }
-    return result;
+const one = (arr) => {
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result = result ^ arr[i];
+  }
+  return result;
 };
-const three = arr => {
-    return arr.filter(item => arr.indexOf(item) === arr.lastIndexOf(item))[0];
+const three = (arr) => {
+  return arr.filter((item) => arr.indexOf(item) === arr.lastIndexOf(item))[0];
 };
 const arr = [1, 3, 1, 3, 2];
 console.log(three(arr));
