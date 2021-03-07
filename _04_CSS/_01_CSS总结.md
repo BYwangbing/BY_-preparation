@@ -348,6 +348,15 @@ background-attachment 属性必须设置为 "fixed"
 - 继 承：会被子元素继承,且，子元素并不能通过 opacity: 1 来取消隐藏；
 - transition：opacity 可以延时显示和隐藏
 
+## 在页面中隐藏一个元素的几种方法
+
+1. display:none，不占据空间，无法点击；
+2. visibility:hidden，占据空间，无法点击；
+3. height:0; overflow:hidden，不占据空间，无法点击；
+4. position:absolute; top:-999em，不占据空间，无法点击；
+5. opacity: 0; filter:Alpha(opacity=0)，占据空间，可以点击；
+6. position: absolute; visibility: hidden， 不占据空间，无法点击。
+
 ## Sass 和 Less 的区别
 
 - 变量符不一样，less 是@，而 Scss 是$，而且变量的作用域也不一样
