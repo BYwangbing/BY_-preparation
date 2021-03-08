@@ -1,3 +1,6 @@
+/*
+https://www.jianshu.com/p/6b691230250e
+*/
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -5,20 +8,22 @@
  */
 // mid = left + (right-left)/2; 可以防止left+right溢出
 let search = function (nums, target) {
-    let left = 0, right = nums.length - 1;
-    while (left <= right) {
-        let mid = Math.floor(left + (right - left) / 2);
-        if (nums[mid] > target) {
-            right = mid - 1;
-        } else if (nums[mid] < target) {
-            left = mid + 1;
-        } else {
-            return mid;
-        }
+  let left = 0,
+    right = nums.length - 1;
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left) / 2);
+    if (nums[mid] > target) {
+      right = mid - 1;
+    } else if (nums[mid] < target) {
+      left = mid + 1;
+    } else {
+      return mid;
     }
-    return -1;
+  }
+  return -1;
 };
-let nums = [-1, 0, 3, 5, 9, 12], target = 9;
+let nums = [-1, 0, 3, 5, 9, 12],
+  target = 9;
 console.log(search(nums, target));
 
 /**
@@ -30,19 +35,24 @@ console.log(search(nums, target));
  */
 // mid = left + (right-left)/2; 可以防止left+right溢出
 function upper_bound_(n, v, a) {
-    // write code here
-    let left = 0, right = n - 1;
-    while (left <= right) {
-        let mid = Math.floor(left + (right - left) / 2);
-        if (a[mid] > v) {
-            right = mid - 1;
-        } else if (a[mid] < v) {
-            left = mid + 1;
-        } else {
-            return mid;
-        }
+  // write code here
+  let left = 0,
+    right = n - 1;
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left) / 2);
+    if (a[mid] > v) {
+      right = mid - 1;
+    } else if (a[mid] < v) {
+      left = mid + 1;
+    } else {
+      return mid;
     }
-    return a.length + 1;
+  }
+  return a.length + 1;
 }
+
+/*
+ //数据必须是排序的，没有排序的自己排序
+*/
 
 console.log(upper_bound_(5, 4, [1, 2, 4, 4, 5]));

@@ -1,0 +1,14 @@
+- TypeScript 增加了代码的可读性和可维护性
+- 有一定的学习成本，需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的概念
+
+TypeScript 是 javascript 的超集，扩展了语法:
+1. 类 Classes
+2. 接口 interfaces
+3. 模块 Modules
+4. 类型注解 Type annotaions
+5. 编译时类型检查 Compile time type checking
+6. Arrow函数(类似c#的Lambda)
+
++ 它支持面向对象的编程概念，如类、接口、继承、泛型等。
++ 它支持强类型或静态类型特性。
++ TypeScript总是在编译时强调错误，而JavaScript在运行时指出错误。

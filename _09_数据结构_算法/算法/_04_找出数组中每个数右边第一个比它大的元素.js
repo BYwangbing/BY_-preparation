@@ -19,7 +19,7 @@ function findMaxRightWithStack(arr) {
   stack[top++] = 0;
   let index = 1;
   while (index < length) {
-    if (stack.length && arr[index] > arr[stack[top - 1]]) {
+    if (stack.length && arr[index] >= arr[stack[top - 1]]) {
       result[stack.pop()] = arr[index];
       top--;
     } else {
@@ -28,14 +28,17 @@ function findMaxRightWithStack(arr) {
       index++;
     }
   }
-  if (!stack.length) {
-    result[stack.pop()] = -1;
+  for (let i = 0; i < result.length; i++) {
+    if (typeof result[i] === 'undefined') {
+      result[i] = -1;
+    }
   }
+  result[length - 1] = -1; //最后一个元素右边没有元素，所以肯定为-1
   return result;
 }
 const A = [1, 5, 3, 6, 4, 8, 9, 10];
 
-const B = [8, 2, 5, 4, 3, 9, 7, 2, 5];
+const B = [0, -1, 0, 8, 2, 5, 4, 3, 9, 7, 2, 5];
 
 console.log(findMaxRightWithStack(B));
 /* 遍历数组中的每一个后面所有元素，找到第一个大于它的，输出即可  O(n^2) */

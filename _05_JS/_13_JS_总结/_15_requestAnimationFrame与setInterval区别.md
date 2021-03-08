@@ -4,6 +4,7 @@ requestAnimationFrame 与 setInterval 都可以实现循环触发事件，但是
 
 ## requestAnimationFrame
 
+MDN: https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame
 HTML5 新增加的 API，类似于 setTimeout 定时器。window 对象的一个方法， window.requestAnimationFrame
 
 1. 特点：

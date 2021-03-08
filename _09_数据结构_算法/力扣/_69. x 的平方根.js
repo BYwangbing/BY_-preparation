@@ -4,9 +4,7 @@
  * @return {number}
  */
 
-var mySqrt = function(x) {
-
-};
+var mySqrt = function (x) {};
 
 /*function sleep(duration) {
     return new Promise((resolve, reject) => setTimeout(resolve, duration))
@@ -20,16 +18,16 @@ async function $print() {
 }
 $print();*/
 
-/*function print(N, delay) {
-    for (let i = 0; i < N; i++) {
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve();
-            }, delay * i);
-        }).then(() => {
-            console.log('hello world');
-        })
-    }
+function print(N, delay) {
+  for (let i = 0; i < N; i++) {
+    new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve();
+      }, delay * i);
+    }).then(() => {
+      console.log('hello world');
+    });
+  }
 }
 
-print(4, 3000);*/
+print(4, 3000);
