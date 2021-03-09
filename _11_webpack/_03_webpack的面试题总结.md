@@ -1,3 +1,5 @@
+WebPack 可以看做是模块打包机：它做的事情是，分析你的项目结构，找到 JavaScript 模块以及其它的一些浏览器不能直接运行的拓展语言（Scss，TypeScript 等），并将其打包为合适的格式以供浏览器使用。
+
 > https://zhuanlan.zhihu.com/p/44438844
 
 > https://juejin.im/post/6844904094281236487
@@ -14,7 +16,9 @@ Webpack 是基于 Nodejs,运行在 Nodejs 环境下
 ## webpack 与 grunt、gulp 的不同？
 
 - webpack 是基于入口的。webpack 会自动地递归解析入口所需要加载的所有资源文件，然后用不同的 Loader 来处理不同的文件，用 Plugin 来扩展 webpack 功能
-
+- Gulp/Grunt 是一种能够优化前端的开发流程的工具，而 WebPack 是一种模块化的解决方案，不过 Webpack 的优点使得 Webpack 可以替代 Gulp/Grunt 类的工具。
+- Grunt 和 Gulp 的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务。
+- Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个浏览器可识别的JavaScript文件。
 ## 有哪些常见的 Loader？你用过哪些 Loader？
 
 - `style-loader`：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS

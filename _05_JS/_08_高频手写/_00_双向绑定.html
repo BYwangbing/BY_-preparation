@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!--   <body>
+    <input type="text" id="tex" />
+    <span id="content"></span>
+  </body>
+  <script>
+    (function () {
+      var JsModel = function () {
+        var obj = {};
+        Object.defineProperty(obj, 'txt', {
+          get: function () {
+            return obj;
+          },
+          set: function (newValue) {
+            document.querySelector('#tex').value = newValue;
+            document.querySelector('#content').textContent = newValue;
+          },
+        });
+        this.init = function () {
+          document
+            .querySelector('#tex')
+            .addEventListener('keyup', function (e) {
+              obj.txt = e.target.value;
+            });
+        };
+      };
+      var model = new JsModel();
+      model.init();
+    })();
+  </script> -->
+
+  <body>
+    <div id="app">
+      <input type="text" id="txt" />
+      <p id="show"></p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var obj = {};
+    Object.defineProperty(obj, 'txt', {
+      get: function () {
+        return obj;
+      },
+      set: function (newValue) {
+        document.getElementById('txt').value = newValue;
+        document.getElementById('show').innerHTML = newValue;
+      },
+    });
+    document.addEventListener('keyup', function (e) {
+      obj.txt = e.target.value;
+    });
+  </script>
+</html>

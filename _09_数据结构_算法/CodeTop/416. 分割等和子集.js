@@ -1,37 +1,28 @@
-/*
- * @Author: your name
- * @Date: 2020-10-12 09:55:49
- * @LastEditTime: 2020-10-12 10:28:06
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \力扣\1011_416. 分割等和子集.js
- */
-// https://leetcode-cn.com/problems/partition-equal-subset-sum/
 /**
  * @param {number[]} nums
  * @return {boolean}
  */
 var canPartition = function (nums) {
-  // 求nums数组和
-  let sum = nums.reduce((prev, cur) => prev + cur);
-  // 当和为奇数时，表示不能平分为两个相等的子集，肯定不能满足
+  // nums数组求和
+  const sum = nums.reduce((pre, cur) => pre + cur);
+  // 如果 sum 为奇数，直接返回 false
   if (sum % 2 === 1) return false;
-  sum = sum / 2;
-  let n = nums.length;
-  // 初始化二维数组 (n + 1)行，(sum/2 + 1)列
+  const target = sum / 2; // 目标和
+  let length = nums.length;
   const dp = [];
-  for (let i = 0; i < n + 1; i++) {
+  // 初始化二维数组 (length + 1)行，(target + 1)列
+  for (let i = 0; i <= length; i++) {
     dp[i] = [];
-    for (let j = 0; j < sum + 1; j++) {
-      // base case，dp[..][0] = true 和 dp[0][..] = false，其余为false
+    for (let j = 0; j <= target; j++) {
+      // base case: dp[..][0] = true 和 dp[0][..] = false，其余为false
       dp[i][j] = j === 0 ? true : false;
     }
   }
-  // 选择
-  for (let i = 1; i < n + 1; i++) {
-    for (let j = 1; j < sum + 1; j++) {
-      // 当前背包容量j不够装下第i个物品的重量nums[i-1]时，只有选择不装
+
+  for (let i = 1; i <= length; i++) {
+    for (let j = 1; j <= target; j++) {
       if (j - nums[i - 1] < 0) {
+        // 当前背包容量j不够装下第i个物品的重量nums[i-1]时，只有选择不装
         dp[i][j] = dp[i - 1][j];
       } else {
         // 有两种选择 不装 或 装，用 或 表示选哪种能装满
@@ -39,9 +30,11 @@ var canPartition = function (nums) {
       }
     }
   }
-  // 所求结果
-  return dp[n][sum];
+  return dp[length][target];
 };
+
+const arr = [1, 5, 11, 5];
+canPartition(arr);
 
 /*
 题目描述 给定一个只包含正整数的非空数组。是否可以将这个数组分割成两个子集，使得两个子集的元素和相等。

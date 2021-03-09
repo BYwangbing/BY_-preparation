@@ -1,3 +1,20 @@
+/*
+fn1.call.call(fn2);
+*/
+function fn1() {
+  console.log(1);
+}
+function fn2() {
+  console.log(2);
+}
+fn1.call(fn2); // 输出1
+fn1.call.call(fn2); // 输出2
+
+/*
+fn1.call.call(fn2);
+
+*/
+
 Function.prototype._call = function (thisArg, ...args) {
   if (typeof this !== 'function') {
     throw new Error('Error');
