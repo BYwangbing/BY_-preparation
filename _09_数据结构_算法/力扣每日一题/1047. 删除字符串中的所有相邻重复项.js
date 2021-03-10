@@ -13,4 +13,4 @@ var removeDuplicates = function (S) {
   }
   return stack.join('');
 };
-console.log(removeDuplicates('abbca'));
+console.log(removeDuplicates('abbaca'));
