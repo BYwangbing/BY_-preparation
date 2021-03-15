@@ -99,6 +99,54 @@ HTTP 协议有一个缺陷：通信只能由客户端发起
 4. WebSocket 并不限于以 Ajax(或 XHR)方式通信，因为 Ajax 技术需要客户端发起请求，
 5. 而 WebSocket 服务器和客户端可以彼此相互推送信息；XHR 受到域的限制，而 WebSocket 允许跨域通信。
 
+## websocket 断线重连实践解决方案
+
+websocket 断线频率较高 解决方案两种，一种是修改 nginx 配置信息，第二种是 websocket 发送心跳包。
+
+断线的可能原因 1：websocket 超时没有消息自动断开连接，应对措施：
+这时候我们就需要知道服务端设置的超时时间是多少，在小于超时时间内发送心跳包，有 2 中方案，
+一种是客户端主动发送上行心跳包，另一种方案是服务端主动发送下行心跳包。
+下面主要讲一下客户端也就是前端如何实现心跳包：
+跳包之所以叫心跳包是因为：它像心跳一样每隔固定时间发一次，以此来告诉服务器，这个客户端还活着。
+心跳检测步骤：
+
+1. 客户端每隔一个时间间隔发生一个探测包给服务器
+2. 客户端发包时启动一个超时定时器
+3. 服务器端接收到检测包，应该回应一个包
+4. 如果客户机收到服务器的应答包，则说明服务器正常，删除超时定时器
+5. 如果客户端的超时定时器超时，依然没有收到应答包，则说明服务器挂了
+
+```js
+//心跳检测
+var heartCheck = {
+  timeout: 30000, //30秒发一次心跳
+  timeoutObj: null,
+  serverTimeoutObj: null,
+  reset: function () {
+    clearTimeout(this.timeoutObj);
+    clearTimeout(this.serverTimeoutObj);
+    return this;
+  },
+  start: function () {
+    var self = this;
+    this.timeoutObj = setTimeout(function () {
+      //这里发送一个心跳，后端收到后，返回一个心跳消息，
+      //onmessage拿到返回的心跳就说明连接正常
+      ws.send('ping');
+      console.log('ping!');
+      self.serverTimeoutObj = setTimeout(function () {
+        //如果超过一定时间还没重置，说明后端主动断开了
+        ws.close(); //如果onclose会执行reconnect，我们执行ws.close()就行了.如果直接执行reconnect 会触发onclose导致重连两次
+      }, self.timeout);
+    }, this.timeout);
+  },
+};
+```
+
+断线的可能原因 2：websocket 异常包括服务端出现中断，交互切屏等等客户端异常中断等等
+
+http://www.webzsky.com/?p=1244
+
 ## 客户端的 API
 
 1.**`WebSocket 构造函数`**

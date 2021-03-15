@@ -1,4 +1,12 @@
-vue-router： router-link router-view  
+vue-router： router-link router-view
+
+## SSR VS CSR
+- SSR：传统的渲染方式，由服务端把渲染的完整的页面吐给客户端。这样减少了一次客户端到服务端的一次http请求，加快相应速度，一般用于首屏的性能优化。
+- CSR：是一种目前流行的渲染方式，它依赖的是运行在客户端的JS，用户首次发送请求只能得到小部分的指引性HTML代码。第二次请求将会请求更多包含HTML字符串的JS文件。
+- 简而言之，就是数据拼接HTML字符串这件事放在服务端还是客户端造成了两者区别。
+- 服务器端渲染的优势在于首屏渲染速度块
+- 客户端渲染则和服务端渲染相反，因为多次和服务器的交互导致首屏加载速度慢。但一旦这些请求完成之后，用户和页面之间的交互时用户体验就会好很多。
+- 简而言之，SSR强在首屏渲染。而CSR强在用户和页面多交互的场景。
 ## 什么是路由
 + 根据不同的url地址展示不同的页面或者数据。
 + 前端路由：一般用于不同的内容展示和切换
@@ -85,15 +93,15 @@ Vue Router 是 Vue.js 官方的路由管理器。
 随着项目功能模块的增加，引入的文件数量剧增。如果不做任何处理，那么首屏加载会相当的缓慢，这个时候，路由按需加载就闪亮登场
 ```vue
 <!--webpack< 2.4 时-->
-{ 
-    path:'/', 
+{
+    path:'/',
     name:'home',
     components:resolve=>require(['@/components/home'],resolve)
-} 
+}
 webpack> 2.4 时
-{ 
-    path:'/', 
-    name:'home', 
+{
+    path:'/',
+    name:'home',
     components:()=>import('@/components/home')
 }
 ```
@@ -150,7 +158,7 @@ window.event.returnValue=false;
     beforeRouteUpdate:当路由进行更新的时候。如果当前路由发生了变化，但是不需要组件的创建销毁的过程的 时候，就需要用到这个钩子函数
     beforeRouterLeave:当路由离开的时候、当用户没有进行支付离开的时候、当用户填写完信息没有保存的时 候......
 ## 请说出路由配置项常用的属性及作用
-    路由配置参数：    
+    路由配置参数：
         path : 跳转路径
         component : 路径相对于的组件
         name:命名路由
@@ -174,12 +182,12 @@ window.event.returnValue=false;
     前进 ：this.$router.forward()
 ## 如何检测路由参数的变化
     通过属性监听来实现或者beforeRouterUpdate()
-    watch:{    "$router"(){   
-    
+    watch:{    "$router"(){
+
     } }
     beforeRouterUpdate(to,from,next);
 ##  vue路由的钩子函数
-### 全局钩子: 
+### 全局钩子:
 `router.beforeEach` `afterEach`
 1. `to`:router即将进入的路由对象
 2. `from`:当前导航即将离开的路由
@@ -200,7 +208,7 @@ router.afterEach((to, from) => { // 举例: 通过跳转后改变document.title
 　　　　}
 　　})
 ```
-### 针对单个路由钩子函数 
+### 针对单个路由钩子函数
 `beforeEnter`  可以在路由配置上直接定义 beforeEnter 钩子
 ```vue
 const router = new VueRouter({
@@ -220,7 +228,7 @@ beforeEnter(to, from, next){
 　　　　next() //正常跳转，不写的话，不会跳转
 　　}
 ```
-### 组件级钩子函数 
+### 组件级钩子函数
 `beforeRouteEnter` `beforeRouteUpdate` `beforeRouteLeave`
 ```vue
 beforeRouteEnter(to, from, next){
@@ -263,7 +271,7 @@ const Foo = {
 导航到不同的 url，向 history 栈添加一个新的记录。（=== window.history.pushState）
 
 + 声明式 `<router-link :to="">`
-+ 编程式 `router.push()` 
++ 编程式 `router.push()`
 
 ```js
 // 字符串
@@ -280,8 +288,8 @@ router.push({ path: 'register', query: { plan: 'private' }});
 ```
 ## router.replace()
 导航到不同 url，替换 history 栈中当前记录。（=== window.history.replaceState）
-   + 声明式 `<router-link :to="" replace>` 
-   + 编程式 `router.replace()` 
+   + 声明式 `<router-link :to="" replace>`
+   + 编程式 `router.replace()`
 
 ##  router.go(n)
 指定前进/回退的步数:
